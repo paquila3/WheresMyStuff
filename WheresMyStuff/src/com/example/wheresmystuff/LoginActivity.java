@@ -1,5 +1,4 @@
 package com.example.wheresmystuff;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
