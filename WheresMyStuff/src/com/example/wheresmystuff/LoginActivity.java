@@ -24,6 +24,7 @@ public class LoginActivity extends Activity {
 	 * The default email to populate the email field with.
 	 */
 	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
+	private static final int MAX_LOGIN_ATTEMPTS = 3;
 
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
@@ -40,6 +41,8 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
+	
+	private int loginAttempts = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +120,7 @@ public class LoginActivity extends Activity {
 			focusView = mPasswordView;
 			cancel = true;
 		}
-
+//bleghagsda
 		// Check for a valid email address.
 		if (TextUtils.isEmpty(mEmail)) {
 			mEmailView.setError(getString(R.string.error_field_required));
@@ -202,7 +205,21 @@ public class LoginActivity extends Activity {
 			for (User u : WheresMyStuff.getUserList()) {
 				if (u.getUsername().equals(mEmail)) {
 					// Account exists, return true if the password matches.
-					return u.getPassword().equals(mPassword);
+					if (u.isLocked()) {
+						mPasswordView.setError(getString(R.string.error_user_locked));
+						return false;
+					}
+					boolean passMatch = u.getPassword().equals(mPassword);
+					if (!passMatch) {
+						loginAttempts++;
+						if (loginAttempts == MAX_LOGIN_ATTEMPTS) {
+							u.setLocked(true);
+							mPasswordView.setError(getString(R.string.error_incorrect_password_user_locked));
+						} else {
+							mPasswordView.setError(getString(R.string.error_incorrect_password));
+						}
+					}
+					return passMatch;
 				}
 			}
 
@@ -214,7 +231,6 @@ public class LoginActivity extends Activity {
 		protected void onPostExecute(final Boolean success) {
 			mAuthTask = null;
 			showProgress(false);
-
 			if (success) {
 				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
 				startActivity(myIntent);
