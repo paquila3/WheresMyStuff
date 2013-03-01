@@ -21,7 +21,6 @@ public final class R {
         public static final int login_status=0x7f070000;
         public static final int login_status_message=0x7f070001;
         public static final int menu_forgot_password=0x7f070008;
-        public static final int menu_settings=0x7f070009;
         public static final int password=0x7f070004;
         public static final int sign_in_button=0x7f070006;
     }
@@ -31,7 +30,6 @@ public final class R {
     }
     public static final class menu {
         public static final int activity_login=0x7f060000;
-        public static final int activity_menu=0x7f060001;
     }
     public static final class string {
         public static final int action_sign_in_register=0x7f040006;
