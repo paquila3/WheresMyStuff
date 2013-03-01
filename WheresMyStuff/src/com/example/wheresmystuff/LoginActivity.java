@@ -118,8 +118,8 @@ public class LoginActivity extends Activity {
 			mPasswordView.setError(getString(R.string.error_invalid_password));
 			focusView = mPasswordView;
 			cancel = true;
-		}//a different comment
-
+		}
+//bleghagsda
 		// Check for a valid email address.
 		if (TextUtils.isEmpty(mEmail)) {
 			mEmailView.setError(getString(R.string.error_field_required));
