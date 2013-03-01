@@ -4,5 +4,6 @@
 
     <string name="error_user_locked">User is locked.</string>
     <string name="error_incorrect_password_user_locked">This password is incorrect. User is now locked.</string>
+    <string name="menu_settings"/>
 
 </resources>
