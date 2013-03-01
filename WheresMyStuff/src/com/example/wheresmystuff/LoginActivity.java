@@ -92,9 +92,8 @@ public class LoginActivity extends Activity {
 	 * errors are presented and no actual login attempt is made.
 	 */
 	public void attemptLogin() {
-		if (mAuthTask != null) {//Cory-Something I'm working on
-			Intent myIntent = new Intent(LoginActivity.this, menuActivity.class);
-			LoginActivity.this.startActivity(myIntent);
+		if (mAuthTask != null) {
+			return;
 		}
 
 		// Reset errors.
@@ -217,7 +216,9 @@ public class LoginActivity extends Activity {
 			showProgress(false);
 
 			if (success) {
-				finish();
+				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+				startActivity(myIntent);
+				finish();//Cory
 			} else {
 				mPasswordView
 						.setError(getString(R.string.error_incorrect_password));
