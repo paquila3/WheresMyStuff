@@ -242,5 +242,6 @@ public class LoginActivity extends Activity {
 			mAuthTask = null;
 			showProgress(false);
 		}
+		//also ignore this comment
 	}
 }
