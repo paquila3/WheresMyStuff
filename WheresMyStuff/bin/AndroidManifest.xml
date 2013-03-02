@@ -28,6 +28,10 @@
             android:name="com.example.wheresmystuff.MenuActivity"
             android:label="@string/title_activity_menu" >
         </activity>
+        <activity
+            android:name="com.example.wheresmystuff.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>
