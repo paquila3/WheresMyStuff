@@ -1,0 +1,9 @@
+
+    <resources>
+        <string name="lost_name">Name:</string>
+        <string name="lost_title_text">What did you lose?</string>
+        <string name="lost_description">Description:</string>
+        <string name="lost_contact_name">Contact Name:</string>
+        <string name="lost_phone_number">Phone Number:</string>
+        <string name="lost_email">E-mail:</string>
+    </resources>

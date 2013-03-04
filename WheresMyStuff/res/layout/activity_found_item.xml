@@ -9,41 +9,42 @@
     tools:context=".FoundItemActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/donate_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/donate_item_name"
+        android:layout_below="@+id/donate_description_text"
         android:layout_marginTop="34dp"
-        android:text="Name:"
+        android:text="@string/found_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/donate_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBottom="@+id/donate_title_text"
         android:layout_alignParentRight="true"
         android:layout_marginRight="16dp"
-        android:ems="10" />
+        android:ems="10"
+        android:inputType="textMultiLine" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/donate_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/donate_description_text"
+        android:layout_below="@+id/donate_title_text"
         android:layout_marginTop="40dp"
-        android:text="Description:"
+        android:text="@string/found_description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/donate_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBottom="@+id/donate_item_name"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_toRightOf="@+id/donate_item_name"
         android:ems="10"
         android:inputType="textMultiLine" >
 
@@ -51,57 +52,58 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/donate_description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="23dp"
-        android:text="What did you find?"
+        android:text="@string/found_title_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <DigitalClock
-        android:id="@+id/digitalClock1"
+        android:id="@+id/donate_digitalClock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="DigitalClock" />
+        android:text="@string/DigitalClock" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/donate_location_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:text="Upload Image"
+        android:text="@string/found_upload_image"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/found_item_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="21dp"
-        android:layout_toLeftOf="@+id/digitalClock1"
+        android:layout_toLeftOf="@+id/donate_digitalClock1"
+        android:contentDescription="@string/found_image"
         android:src="@android:drawable/ic_menu_camera" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/donate_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="32dp"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/donate_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignLeft="@+id/textView4"
-        android:text="Back" />
+        android:layout_alignBaseline="@+id/donate_submit"
+        android:layout_alignBottom="@+id/donate_submit"
+        android:layout_alignLeft="@+id/donate_location_text"
+        android:text="@string/back" />
 
 </RelativeLayout>

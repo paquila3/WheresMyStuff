@@ -1,0 +1,8 @@
+
+    <resources>
+        <string name="found_name">Name:</string>
+        <string name="found_title_text">What did you find?</string>
+        <string name="found_description">Description:</string>
+        <string name="found_upload_image">Upload Image:</string>
+        <string name="found_image">found_image</string>
+    </resources>

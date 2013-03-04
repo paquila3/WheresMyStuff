@@ -1,0 +1,12 @@
+
+    <resources>
+        <string name="donate_title_text">What would you like to donate?</string>
+        <string name="donate_clothing">Clothing</string>
+        <string name="donate_food">Food</string>
+        <string name="donate_healthcare_items">Healthcare Items</string>
+        <string name="donate_toys">Toys</string>
+        <string name="donate_item_name">Item Name:</string>
+        <string name="donate_details">Details:</string>
+        <string name="donate_location_to_send">Location to Send:</string>
+        <string name="donate_confirm">Confirm</string>
+    </resources>
