@@ -9,11 +9,11 @@
     tools:context=".AddItemActivity" >
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/donate_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_alignBottom="@+id/donate_item_name"
+        android:layout_toRightOf="@+id/donate_item_name"
         android:ems="10"
         android:inputType="textMultiLine" />
 
@@ -23,131 +23,132 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText2"
+        android:layout_alignRight="@+id/donate_details"
         android:orientation="vertical" >
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/donate_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="34dp"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/donate_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout1"
         android:layout_marginTop="122dp"
-        android:text="Description:"
+        android:text="@string/lost_description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/donate_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText2"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_above="@+id/donate_details"
+        android:layout_alignLeft="@+id/donate_item_name"
         android:layout_marginBottom="22dp"
-        android:text="Name:"
+        android:text="@string/lost_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/donate_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignRight="@+id/editText2"
-        android:ems="10" >
+        android:layout_alignBottom="@+id/donate_title_text"
+        android:layout_alignRight="@+id/donate_details"
+        android:ems="10"
+        android:inputType="textMultiLine" >
 
         <requestFocus />
     </EditText>
 
     <DigitalClock
-        android:id="@+id/digitalClock1"
+        android:id="@+id/donate_digitalClock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/linearLayout1"
-        android:text="DigitalClock" />
+        android:text="@string/DigitalClock" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/donate_description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/digitalClock1"
-        android:text="What did you lose?"
+        android:layout_below="@+id/donate_digitalClock1"
+        android:text="@string/lost_title_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/donate_location_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/donate_item_name"
         android:layout_centerVertical="true"
-        android:text="Contact Name:"
+        android:text="@string/lost_contact_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/donate_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_toRightOf="@+id/textView4"
+        android:layout_alignBottom="@+id/donate_location_text"
+        android:layout_alignRight="@+id/donate_details"
+        android:layout_toRightOf="@+id/donate_location_text"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/lost_phone_number_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:text="Phone Number:"
+        android:layout_alignLeft="@+id/donate_location_text"
+        android:layout_below="@+id/donate_location_text"
+        android:text="@string/lost_phone_number"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/lost_phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignBottom="@+id/lost_phone_number_text"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/textView5"
+        android:layout_toRightOf="@+id/lost_phone_number_text"
         android:ems="10"
         android:inputType="phone" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/lost_email_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView5"
-        android:text="E-mail:"
+        android:layout_below="@+id/lost_phone_number_text"
+        android:text="@string/lost_email"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/lost_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignBottom="@+id/lost_email_text"
+        android:layout_alignLeft="@+id/donate_name"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/donate_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_toLeftOf="@+id/editText5"
-        android:text="Back" />
+        android:layout_alignBaseline="@+id/donate_submit"
+        android:layout_alignBottom="@+id/donate_submit"
+        android:layout_toLeftOf="@+id/lost_email"
+        android:text="@string/back" />
 
 </RelativeLayout>

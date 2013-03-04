@@ -1,8 +1,11 @@
 package com.example.wheresmystuff;
 
+import java.util.ArrayList;
+
 public class User {
 	private String username, password;
 	private boolean admin, locked;
+	private ArrayList<Item> itemList= new ArrayList<Item>();
 	
 	public User(String username, String password) {
 		this(username, password, false);
@@ -34,5 +37,13 @@ public class User {
 	public void setLocked(boolean locked) {
 		this.locked=locked;
 		
+	}
+
+	public ArrayList<Item> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(ArrayList<Item> itemList) {
+		this.itemList = itemList;
 	}
 }
