@@ -3,6 +3,7 @@ package com.example.wheresmystuff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
@@ -12,6 +13,16 @@ public class MenuActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
+		
+		findViewById(R.id.logout_button).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						Intent myIntent = new Intent(MenuActivity.this, LoginActivity.class);
+						startActivity(myIntent);
+						finish();
+					}
+				});
 		
 		findViewById(R.id.Found_button).setOnClickListener(
 				new View.OnClickListener() {

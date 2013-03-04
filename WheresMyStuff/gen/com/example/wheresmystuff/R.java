@@ -24,9 +24,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Donate_button=0x7f08001c;
-        public static final int Found_button=0x7f08001d;
-        public static final int action_settings=0x7f080021;
+        public static final int Donate_button=0x7f08001e;
+        public static final int Found_button=0x7f08001f;
+        public static final int action_settings=0x7f080022;
         public static final int clothing_radio=0x7f08000f;
         public static final int donate_confirm=0x7f08000e;
         public static final int donate_description_text=0x7f080007;
@@ -48,13 +48,14 @@ public final class R {
         public static final int login_form=0x7f080017;
         public static final int login_status=0x7f080015;
         public static final int login_status_message=0x7f080016;
-        public static final int lost_button=0x7f08001e;
+        public static final int logout_button=0x7f08001c;
+        public static final int lost_button=0x7f08001d;
         public static final int lost_email=0x7f08000d;
         public static final int lost_email_text=0x7f08000c;
         public static final int lost_phone_number=0x7f08000b;
         public static final int lost_phone_number_text=0x7f08000a;
-        public static final int menu_forgot_password=0x7f08001f;
-        public static final int menu_settings=0x7f080020;
+        public static final int menu_forgot_password=0x7f080020;
+        public static final int menu_settings=0x7f080021;
         public static final int password=0x7f080019;
         public static final int sign_in_button=0x7f08001b;
         public static final int toys_radio=0x7f080012;
@@ -77,6 +78,7 @@ public final class R {
         public static final int DigitalClock=0x7f05000b;
         public static final int Donate=0x7f05002c;
         public static final int Found=0x7f05002a;
+        public static final int Logout=0x7f05002d;
         public static final int Lost=0x7f05002b;
         public static final int action_settings=0x7f050006;
         public static final int action_sign_in_register=0x7f050022;
