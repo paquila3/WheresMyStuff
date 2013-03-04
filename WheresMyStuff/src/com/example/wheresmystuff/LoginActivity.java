@@ -225,7 +225,8 @@ public class LoginActivity extends Activity {
 				}
 			}
 
-			WheresMyStuff.createUser(mEmail, mPassword);
+			User newUser=WheresMyStuff.createUser(mEmail, mPassword);
+			WheresMyStuff.setActiveUser(newUser);
 			return true;
 		}
 

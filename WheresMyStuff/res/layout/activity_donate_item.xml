@@ -91,7 +91,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/donate_details"
+        android:id="@+id/donate_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/donate_description_texts"
@@ -113,14 +113,14 @@
         android:id="@+id/donate_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/donate_details"
-        android:layout_below="@+id/donate_details"
+        android:layout_alignRight="@+id/lost_description"
+        android:layout_below="@+id/lost_description"
         android:layout_toRightOf="@+id/donate_location_text"
         android:ems="10"
         android:inputType="textPostalAddress" />
 
     <Button
-        android:id="@+id/donate_submit"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -134,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/donate_submit"
+        android:layout_alignTop="@+id/submit"
         android:layout_toRightOf="@+id/donate_location_text"
         android:text="@string/donate_confirm" />
 

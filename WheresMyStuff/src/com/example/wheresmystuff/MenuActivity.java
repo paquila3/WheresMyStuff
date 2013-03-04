@@ -28,7 +28,8 @@ public class MenuActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Put your code here
+						Intent foundIntent = new Intent(MenuActivity.this, FoundItemActivity.class);
+						startActivity(foundIntent);
 						finish();
 					}
 				});
@@ -37,7 +38,8 @@ public class MenuActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Put your code here
+						Intent lostIntent = new Intent(MenuActivity.this, AddItemActivity.class);
+						startActivity(lostIntent);
 						finish();
 					}
 				});
@@ -46,7 +48,8 @@ public class MenuActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Put your code here
+						Intent donateIntent = new Intent(MenuActivity.this, DonateItemActivity.class);
+						startActivity(donateIntent);
 						finish();
 					}
 				});

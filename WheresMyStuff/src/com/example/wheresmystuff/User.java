@@ -18,6 +18,16 @@ public class User {
 		locked = false;
 	}
 	
+	boolean add(Item item){
+		try{
+		itemList.add(item);
+		}
+		catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
