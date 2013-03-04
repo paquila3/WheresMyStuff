@@ -3,5 +3,6 @@
     <string name="Found">Found</string>
     <string name="Lost">Lost</string>
     <string name="Donate">Donate</string>
+    <string name="Logout">Logout</string>
     
 </resources>
