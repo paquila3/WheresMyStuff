@@ -24,9 +24,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Donate_button=0x7f080016;
-        public static final int Found_button=0x7f080017;
-        public static final int action_settings=0x7f08001b;
+        public static final int Donate_button=0x7f08001b;
+        public static final int Found_button=0x7f08001c;
+        public static final int action_settings=0x7f080020;
         public static final int button1=0x7f080003;
         public static final int button2=0x7f08000e;
         public static final int digitalClock1=0x7f080006;
@@ -35,17 +35,22 @@ public final class R {
         public static final int editText3=0x7f080009;
         public static final int editText4=0x7f08000b;
         public static final int editText5=0x7f08000d;
-        public static final int email=0x7f080012;
+        public static final int email=0x7f080017;
+        public static final int imageButton1=0x7f080013;
         public static final int linearLayout1=0x7f080002;
-        public static final int login=0x7f080014;
-        public static final int login_form=0x7f080011;
-        public static final int login_status=0x7f08000f;
-        public static final int login_status_message=0x7f080010;
-        public static final int lost_button=0x7f080018;
-        public static final int menu_forgot_password=0x7f080019;
-        public static final int menu_settings=0x7f08001a;
-        public static final int password=0x7f080013;
-        public static final int sign_in_button=0x7f080015;
+        public static final int login=0x7f080019;
+        public static final int login_form=0x7f080016;
+        public static final int login_status=0x7f080014;
+        public static final int login_status_message=0x7f080015;
+        public static final int lost_button=0x7f08001d;
+        public static final int menu_forgot_password=0x7f08001e;
+        public static final int menu_settings=0x7f08001f;
+        public static final int password=0x7f080018;
+        public static final int radioButton1=0x7f08000f;
+        public static final int radioButton2=0x7f080011;
+        public static final int radioButton3=0x7f080010;
+        public static final int radioButton4=0x7f080012;
+        public static final int sign_in_button=0x7f08001a;
         public static final int textView1=0x7f080004;
         public static final int textView2=0x7f080001;
         public static final int textView3=0x7f080007;
@@ -55,13 +60,17 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_add_item=0x7f030000;
-        public static final int activity_login=0x7f030001;
-        public static final int activity_menu=0x7f030002;
+        public static final int activity_donate_item=0x7f030001;
+        public static final int activity_found_item=0x7f030002;
+        public static final int activity_login=0x7f030003;
+        public static final int activity_menu=0x7f030004;
     }
     public static final class menu {
         public static final int activity_login=0x7f070000;
         public static final int activity_menu=0x7f070001;
         public static final int add_item=0x7f070002;
+        public static final int donate_item=0x7f070003;
+        public static final int found_item=0x7f070004;
     }
     public static final class string {
         public static final int Donate=0x7f050015;

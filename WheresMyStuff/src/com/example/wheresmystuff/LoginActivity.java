@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_login);
-
+		
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
@@ -218,6 +218,8 @@ public class LoginActivity extends Activity {
 						} else {
 							mPasswordView.setError(getString(R.string.error_incorrect_password));
 						}
+					} else {
+						WheresMyStuff.setActiveUser(u);
 					}
 					return passMatch;
 				}
@@ -236,8 +238,6 @@ public class LoginActivity extends Activity {
 				startActivity(myIntent);
 				finish();//Cory
 			} else {
-				mPasswordView
-						.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
 			}
 		}
