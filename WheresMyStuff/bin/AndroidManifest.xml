@@ -12,7 +12,7 @@
         android:name="com.example.wheresmystuff.WheresMyStuff"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:label="@string/app_name" >
         <activity
             android:name="com.example.wheresmystuff.LoginActivity"
             android:label="@string/app_name"
@@ -30,6 +30,10 @@
         <activity
             android:name="com.example.wheresmystuff.MainActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.example.wheresmystuff.AddItemActivity"
+            android:label="@string/title_activity_add_item" >
         </activity>
     </application>
 
