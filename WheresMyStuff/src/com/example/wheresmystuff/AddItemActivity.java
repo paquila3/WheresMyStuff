@@ -24,11 +24,11 @@ public class AddItemActivity extends Activity {
 						EditText descriptText=(EditText)findViewById(R.id.lost_description);
 						String description=descriptText.getText().toString();
 						EditText contactText=(EditText)findViewById(R.id.lost_contact_name);
-						String contact=descriptText.getText().toString();
+						String contact=contactText.getText().toString();
 						EditText phoneText=(EditText)findViewById(R.id.lost_phone_number);
-						String phoneNumber=descriptText.getText().toString();
+						String phoneNumber=phoneText.getText().toString();
 						EditText emailText=(EditText)findViewById(R.id.lost_email);
-						String email=descriptText.getText().toString();
+						String email=emailText.getText().toString();
 						LostItem lost= new LostItem(name, description, contact , phoneNumber, email);
 						if(WheresMyStuff.add(lost)){
 							Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
