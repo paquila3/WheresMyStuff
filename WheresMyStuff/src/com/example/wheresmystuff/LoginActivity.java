@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings.Secure;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -54,7 +55,12 @@ public class LoginActivity extends Activity {
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
-
+		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID); 
+		if(WheresMyStuff.getActiveUser()!=null && WheresMyStuff.getActiveUser().getUser_android_id().equals(android_id)){
+			Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+			startActivity(myIntent);
+			finish();
+		}
 		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView
 				.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -220,6 +226,8 @@ public class LoginActivity extends Activity {
 						}
 					} else {
 						WheresMyStuff.setActiveUser(u);
+						String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
+						u.setUser_android_id(android_id);
 					}
 					return passMatch;
 				}
@@ -227,6 +235,8 @@ public class LoginActivity extends Activity {
 
 			User newUser=WheresMyStuff.createUser(mEmail, mPassword);
 			WheresMyStuff.setActiveUser(newUser);
+			String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID);
+			newUser.setUser_android_id(android_id);
 			return true;
 		}
 

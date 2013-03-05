@@ -49,7 +49,7 @@ public class AddItemActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 
-						Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
+						Intent foundIntent = new Intent(AddItemActivity.this, MenuActivity.class);
 						startActivity(foundIntent);
 						finish();
 						

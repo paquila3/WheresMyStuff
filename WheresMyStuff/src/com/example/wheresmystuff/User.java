@@ -3,7 +3,7 @@ package com.example.wheresmystuff;
 import java.util.ArrayList;
 
 public class User {
-	private String username, password;
+	private String username, password, user_android_id;
 	private boolean admin, locked;
 	private ArrayList<Item> itemList= new ArrayList<Item>();
 	
@@ -55,5 +55,13 @@ public class User {
 
 	public void setItemList(ArrayList<Item> itemList) {
 		this.itemList = itemList;
+	}
+
+	public String getUser_android_id() {
+		return user_android_id;
+	}
+
+	public void setUser_android_id(String user_android_id) {
+		this.user_android_id = user_android_id;
 	}
 }

@@ -43,7 +43,7 @@ public class FoundItemActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 
-						Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
+						Intent foundIntent = new Intent(FoundItemActivity.this, MenuActivity.class);
 						startActivity(foundIntent);
 						finish();
 						

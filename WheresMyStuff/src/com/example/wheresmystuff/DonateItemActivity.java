@@ -71,7 +71,7 @@ public class DonateItemActivity extends Activity {
 					@Override
 					public void onClick(View v) {
 
-						Intent foundIntent = new Intent(DonateItemActivity.this, ItemListActivity.class);
+						Intent foundIntent = new Intent(DonateItemActivity.this, MenuActivity.class);
 						startActivity(foundIntent);
 						finish();
 						

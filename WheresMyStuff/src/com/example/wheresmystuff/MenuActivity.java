@@ -18,6 +18,7 @@ public class MenuActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
+						WheresMyStuff.setActiveUser(null);
 						Intent myIntent = new Intent(MenuActivity.this, LoginActivity.class);
 						startActivity(myIntent);
 						finish();
