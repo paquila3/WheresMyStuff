@@ -24,9 +24,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Donate_button=0x7f08002d;
-        public static final int Found_button=0x7f08002e;
-        public static final int action_settings=0x7f080031;
+        public static final int Donate_button=0x7f08002e;
+        public static final int Found_button=0x7f08002f;
+        public static final int action_settings=0x7f080032;
         public static final int back=0x7f08000e;
         public static final int clothing_radio=0x7f080011;
         public static final int donate_confirm=0x7f08001b;
@@ -38,7 +38,7 @@ public final class R {
         public static final int donate_location_text=0x7f080019;
         public static final int donate_name=0x7f080016;
         public static final int donate_title_text=0x7f080010;
-        public static final int email=0x7f080027;
+        public static final int email=0x7f080028;
         public static final int food_radio=0x7f080013;
         public static final int found_description=0x7f080020;
         public static final int found_description_text=0x7f08001e;
@@ -50,12 +50,12 @@ public final class R {
         public static final int found_title_text=0x7f08001c;
         public static final int healthcare_radio=0x7f080012;
         public static final int linearLayout1=0x7f080002;
-        public static final int login=0x7f080029;
-        public static final int login_form=0x7f080026;
-        public static final int login_status=0x7f080024;
-        public static final int login_status_message=0x7f080025;
-        public static final int logout_button=0x7f08002b;
-        public static final int lost_button=0x7f08002c;
+        public static final int login=0x7f08002a;
+        public static final int login_form=0x7f080027;
+        public static final int login_status=0x7f080025;
+        public static final int login_status_message=0x7f080026;
+        public static final int logout_button=0x7f08002c;
+        public static final int lost_button=0x7f08002d;
         public static final int lost_contact_name=0x7f080009;
         public static final int lost_description=0x7f080000;
         public static final int lost_description_text=0x7f080001;
@@ -68,11 +68,12 @@ public final class R {
         public static final int lost_phone_number=0x7f08000b;
         public static final int lost_phone_number_text=0x7f08000a;
         public static final int lost_title_text=0x7f080007;
-        public static final int menu_forgot_password=0x7f08002f;
-        public static final int menu_settings=0x7f080030;
-        public static final int password=0x7f080028;
-        public static final int sign_in_button=0x7f08002a;
+        public static final int menu_forgot_password=0x7f080030;
+        public static final int menu_settings=0x7f080031;
+        public static final int password=0x7f080029;
+        public static final int sign_in_button=0x7f08002b;
         public static final int submit=0x7f080003;
+        public static final int textView1=0x7f080024;
         public static final int toys_radio=0x7f080014;
     }
     public static final class layout {
