@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.ListActivity;
-import android.app.Activity;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 public class ItemListActivity extends ListActivity {
 
