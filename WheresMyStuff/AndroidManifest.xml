@@ -39,6 +39,10 @@
             android:name="com.example.wheresmystuff.ItemListActivity"
             android:label="@string/title_activity_item_list" >
         </activity>
+        <activity
+            android:name="com.example.wheresmystuff.AdminActivity"
+            android:label="@string/title_activity_admin" >
+        </activity>
     </application>
 
 </manifest>

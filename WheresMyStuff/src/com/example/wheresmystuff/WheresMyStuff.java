@@ -20,6 +20,14 @@ public class WheresMyStuff extends Application {
 	public static ArrayList<User> getUserList() {
 		return userList;
 	}
+	
+	/*public static getUser(User oldUser) {
+		return userList.;
+	}*/
+	
+	public static void makeAdmin(User oldUser){
+		oldUser.setAdmin();
+	}
 
 	public static User getActiveUser() {
 		return activeUser;

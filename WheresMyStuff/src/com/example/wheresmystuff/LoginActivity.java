@@ -57,9 +57,16 @@ public class LoginActivity extends Activity {
 		mEmailView.setText(mEmail);
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID); 
 		if(WheresMyStuff.getActiveUser()!=null && WheresMyStuff.getActiveUser().getUser_android_id().equals(android_id)){
-			Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
-			startActivity(myIntent);
-			finish();
+			if(!WheresMyStuff.getActiveUser().isAdmin()){
+				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+				startActivity(myIntent);
+				finish();
+			}
+			else{
+				Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
+				startActivity(myIntent);
+				finish();
+			}
 		}
 		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView
@@ -245,9 +252,16 @@ public class LoginActivity extends Activity {
 			mAuthTask = null;
 			showProgress(false);
 			if (success) {
-				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
-				startActivity(myIntent);
-				finish();//Cory
+				if(!WheresMyStuff.getActiveUser().isAdmin()){
+					Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+					startActivity(myIntent);
+					finish();
+				}
+				else{
+					Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
+					startActivity(myIntent);
+					finish();
+				}
 			} else {
 				mPasswordView.requestFocus();
 			}
