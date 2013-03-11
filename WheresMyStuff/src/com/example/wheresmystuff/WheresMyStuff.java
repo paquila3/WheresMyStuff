@@ -13,6 +13,12 @@ public class WheresMyStuff extends Application {
 		return newUser;
 	}
 	
+	public static User createAdmin(String email, String password) {
+		User newUser=new User(email, password,true);
+		userList.add(newUser);
+		return newUser;
+	}
+	
 	static boolean add(Item item){
 		return getActiveUser().add(item);
 	}
@@ -21,12 +27,11 @@ public class WheresMyStuff extends Application {
 		return userList;
 	}
 	
-	/*public static getUser(User oldUser) {
-		return userList.;
-	}*/
-	
-	public static void makeAdmin(User oldUser){
-		oldUser.setAdmin();
+	public static void makeAdmin(User oldUser){//Cory-check this
+		String username=oldUser.getUsername();
+		String password=oldUser.getPassword();
+		userList.remove(oldUser);
+		createAdmin(username,password);
 	}
 
 	public static User getActiveUser() {

@@ -48,10 +48,6 @@ public class User {
 		this.locked=locked;
 		
 	}
-	
-	public void setAdmin() {
-		admin=true;
-	}
 
 	public ArrayList<Item> getItemList() {
 		return itemList;
