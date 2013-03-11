@@ -40,6 +40,10 @@ public class User {
 		return admin;
 	}
 	
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	
 	public boolean isLocked() {
 		return locked;
 	}
