@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Add_Admin">Add Admin</string>
-    <string name="Create_Admin">Create Admin</string>
-    <string name="Unlock_User">Unlock User</string>
+    <string name="Add_Admin">Promote</string>
+    <string name="Create_Admin">Unlock</string>
+    <string name="Unlock_User">Delete</string>
     
 </resources>

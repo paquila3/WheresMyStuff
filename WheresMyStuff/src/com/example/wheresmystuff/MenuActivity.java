@@ -54,6 +54,18 @@ public class MenuActivity extends Activity {
 						finish();
 					}
 				});
+		
+		findViewById(R.id.admin_button).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						if (!WheresMyStuff.getActiveUser().isAdmin())
+							return;
+						Intent adminIntent = new Intent(MenuActivity.this, AdminActivity.class);
+						startActivity(adminIntent);
+						finish();
+					}
+				});
 	}
 
 	@Override

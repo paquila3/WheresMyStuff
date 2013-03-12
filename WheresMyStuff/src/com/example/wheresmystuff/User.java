@@ -61,6 +61,11 @@ public class User {
 		this.itemList = itemList;
 	}
 
+	@Override
+	public String toString() {
+		return username;
+	}
+	
 	public String getUser_android_id() {
 		return user_android_id;
 	}

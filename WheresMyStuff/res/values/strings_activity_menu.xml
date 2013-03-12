@@ -4,5 +4,6 @@
     <string name="Lost">Lost</string>
     <string name="Donate">Donate</string>
     <string name="Logout">Logout</string>
+    <string name="Admin">Admin</string>
     
 </resources>

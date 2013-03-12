@@ -4,8 +4,18 @@ import android.app.Application;
 import java.util.ArrayList;
 
 public class WheresMyStuff extends Application {
+
 	private static ArrayList<User> userList = new ArrayList<User>();
 	private static User activeUser;
+	private static boolean init;
+	
+	public static void initialize() {
+		if (init)
+			return;
+		User adm = WheresMyStuff.createUser("a@m","aaaa");
+		WheresMyStuff.promoteUser(adm);//Creates default admin
+		init = true;
+	}
 	
 	public static User createUser(String email, String password) {
 		User newUser=new User(email, password);
@@ -13,10 +23,9 @@ public class WheresMyStuff extends Application {
 		return newUser;
 	}
 	
-	public static User createAdmin(String email, String password) {
-		User newUser=new User(email, password,true);
-		userList.add(newUser);
-		return newUser;
+	public static User promoteUser(User user) {
+		user.setAdmin(true);
+		return user;
 	}
 	
 	static boolean add(Item item){
@@ -28,10 +37,7 @@ public class WheresMyStuff extends Application {
 	}
 	
 	public static void makeAdmin(User oldUser){//Cory-check this
-		String username=oldUser.getUsername();
-		String password=oldUser.getPassword();
-		userList.remove(oldUser);
-		createAdmin(username,password);
+		promoteUser(oldUser);
 	}
 
 	public static User getActiveUser() {

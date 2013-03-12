@@ -55,19 +55,12 @@ public class LoginActivity extends Activity {
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
-		WheresMyStuff.createAdmin("a@m","aaaa");//Creates default admin
+		WheresMyStuff.initialize();
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID); 
 		if(WheresMyStuff.getActiveUser()!=null && WheresMyStuff.getActiveUser().getUser_android_id().equals(android_id)){
-			if(!WheresMyStuff.getActiveUser().isAdmin()){
-				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
-				startActivity(myIntent);
-				finish();
-			}
-			else{
-				Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
-				startActivity(myIntent);
-				finish();
-			}
+			Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+			startActivity(myIntent);
+			finish();
 		}
 		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView
@@ -254,16 +247,9 @@ public class LoginActivity extends Activity {
 			mAuthTask = null;
 			showProgress(false);
 			if (success) {
-				if(!WheresMyStuff.getActiveUser().isAdmin()){
-					Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
-					startActivity(myIntent);
-					finish();
-				}
-				else{
-					Intent myIntent = new Intent(LoginActivity.this, AdminActivity.class);
-					startActivity(myIntent);
-					finish();
-				}
+				Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
+				startActivity(myIntent);
+				finish();
 			} else {
 				mPasswordView.requestFocus();
 			}
