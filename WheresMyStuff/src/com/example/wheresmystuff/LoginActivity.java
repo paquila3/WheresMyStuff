@@ -55,6 +55,7 @@ public class LoginActivity extends Activity {
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
+		WheresMyStuff.createAdmin("a@m","aaaa");//Creates default admin
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID); 
 		if(WheresMyStuff.getActiveUser()!=null && WheresMyStuff.getActiveUser().getUser_android_id().equals(android_id)){
 			if(!WheresMyStuff.getActiveUser().isAdmin()){
