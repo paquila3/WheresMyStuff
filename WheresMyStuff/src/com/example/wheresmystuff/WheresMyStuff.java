@@ -46,6 +46,10 @@ public class WheresMyStuff extends Application {
 		return user;
 	}
 	
+	public static User deleteUser(User user) {
+		return userList.remove(userList.indexOf(user));
+	}
+	
 	public static String getPassword(String email){
 		for(int i=0; i<=userList.size(); i++){
 			if(userList.get(i).getUsername().equals(email)){
