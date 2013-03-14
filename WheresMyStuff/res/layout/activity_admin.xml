@@ -60,6 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/Add_Admin"
-        android:text="@string/button" />
+        android:text="@string/Logout" />
 
 </RelativeLayout>

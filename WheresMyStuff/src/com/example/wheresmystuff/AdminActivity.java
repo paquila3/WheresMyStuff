@@ -38,7 +38,7 @@ public class AdminActivity extends Activity {
 					}
 				});
 		
-		findViewById(R.id.Create_Admin).setOnClickListener(
+		findViewById(R.id.Unlock_User).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
@@ -46,11 +46,17 @@ public class AdminActivity extends Activity {
 					}
 				});
 		
-		findViewById(R.id.Unlock_User).setOnClickListener(
+		findViewById(R.id.Create_Admin).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Your work here
+						final EditText edit =  (EditText) findViewById(R.id.editText1);
+						String email=edit.getText().toString();
+						String password=WheresMyStuff.getPassword(email);
+						User clone = WheresMyStuff.createClone(email,password);
+						WheresMyStuff.unlockUser(clone);
+						Intent menuIntent = new Intent(AdminActivity.this, MenuActivity.class);
+						startActivity(menuIntent);
 						finish();
 					}
 				});

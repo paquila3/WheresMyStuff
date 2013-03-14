@@ -37,6 +37,15 @@ public class WheresMyStuff extends Application {
 		return user;
 	}
 	
+	public static User unlockUser(User user) {//cory
+		for(int i=0; i<userList.size(); i++){
+			if((userList.get(i).getUsername().equals(user.getUsername()))&& (userList.get(i).getPassword().equals(user.getPassword()))){
+				userList.get(i).setLocked(false);
+			}
+		}
+		return user;
+	}
+	
 	public static String getPassword(String email){
 		for(int i=0; i<=userList.size(); i++){
 			if(userList.get(i).getUsername().equals(email)){
