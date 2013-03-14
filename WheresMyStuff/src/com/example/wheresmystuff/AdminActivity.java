@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 public class AdminActivity extends Activity { 
@@ -25,7 +27,13 @@ public class AdminActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Cory
+						final EditText edit =  (EditText) findViewById(R.id.editText1);
+						String email=edit.getText().toString();
+						String password=WheresMyStuff.getPassword(email);
+						User clone = WheresMyStuff.createClone(email,password);
+						WheresMyStuff.promoteUser(clone);
+						Intent menuIntent = new Intent(AdminActivity.this, MenuActivity.class);
+						startActivity(menuIntent);
 						finish();
 					}
 				});
@@ -34,8 +42,7 @@ public class AdminActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						//Your work here
-						finish();
+						
 					}
 				});
 		
@@ -44,6 +51,17 @@ public class AdminActivity extends Activity {
 					@Override
 					public void onClick(View view) {
 						//Your work here
+						finish();
+					}
+				});
+		
+		findViewById(R.id.logout_button2).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						WheresMyStuff.setActiveUser(null);
+						Intent myIntent = new Intent(AdminActivity.this, LoginActivity.class);
+						startActivity(myIntent);
 						finish();
 					}
 				});

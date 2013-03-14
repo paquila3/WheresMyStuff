@@ -23,9 +23,27 @@ public class WheresMyStuff extends Application {
 		return newUser;
 	}
 	
+	public static User createClone(String email, String password) {//cory
+		User newUser=new User(email, password);
+		return newUser;
+	}
+	
 	public static User promoteUser(User user) {
-		user.setAdmin(true);
+		for(int i=0; i<userList.size(); i++){
+			if((userList.get(i).getUsername().equals(user.getUsername()))&& (userList.get(i).getPassword().equals(user.getPassword()))){
+				userList.get(i).setAdmin(true);
+			}
+		}
 		return user;
+	}
+	
+	public static String getPassword(String email){
+		for(int i=0; i<=userList.size(); i++){
+			if(userList.get(i).getUsername().equals(email)){
+				return userList.get(i).getPassword();
+			}
+		}
+		return "";
 	}
 	
 	static boolean add(Item item){

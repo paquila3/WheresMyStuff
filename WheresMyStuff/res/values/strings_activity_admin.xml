@@ -3,5 +3,6 @@
     <string name="Add_Admin">Promote</string>
     <string name="Create_Admin">Unlock</string>
     <string name="Unlock_User">Delete</string>
+    <string name="logout_button">logout_button</string>
     
 </resources>

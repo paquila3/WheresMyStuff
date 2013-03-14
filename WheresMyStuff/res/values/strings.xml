@@ -16,5 +16,7 @@
     <string name="title_activity_item_list">ItemListActivity</string>
     <string name="error_try_again">Something went wrong. Please try again</string>
     <string name="title_activity_admin">AdminActivity</string>
+    <string name="logout_button2">Button</string>
+    <string name="button">Button</string>
 
 </resources>
