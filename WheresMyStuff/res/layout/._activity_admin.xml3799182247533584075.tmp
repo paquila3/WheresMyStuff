@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity" >
+
+    <Button
+        android:id="@+id/Unlock_User"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Create_Admin"
+        android:layout_alignBottom="@+id/Create_Admin"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/Create_Admin"
+        android:text="@string/Unlock_User" />
+
+    <Button
+        android:id="@+id/Create_Admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Add_Admin"
+        android:layout_alignBottom="@+id/Add_Admin"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="104dp"
+        android:text="@string/Create_Admin" />
+
+    <Button
+        android:id="@+id/Add_Admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/Add_Admin" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Unlock_User"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <ListView
+        android:id="@+id/list_view_users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText1"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/logout_button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/Add_Admin"
+        android:text="@string/Logout" />
+
+</RelativeLayout>

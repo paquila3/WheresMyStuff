@@ -6,6 +6,8 @@ public class User {
 	private String username, password, user_android_id;
 	private boolean admin, locked;
 	private ArrayList<Item> itemList= new ArrayList<Item>();
+	private ArrayList<Item> foundItemList= new ArrayList<Item>();
+	private ArrayList<Item> donateItemList= new ArrayList<Item>();
 	
 	public User(String username, String password) {
 		this(username, password, false);
@@ -21,6 +23,26 @@ public class User {
 	boolean add(Item item){
 		try{
 		itemList.add(item);
+		}
+		catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+	
+	boolean addFound(Item item){
+		try{
+		foundItemList.add(item);
+		}
+		catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+	
+	boolean addDonate(Item item){
+		try{
+		donateItemList.add(item);
 		}
 		catch(Exception e){
 			return false;
