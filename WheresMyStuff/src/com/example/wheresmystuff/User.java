@@ -78,6 +78,14 @@ public class User {
 	public ArrayList<Item> getItemList() {
 		return itemList;
 	}
+	
+	public ArrayList<Item> getFoundItemList() {
+		return foundItemList;
+	}
+	
+	public ArrayList<Item> getDonateItemList() {
+		return donateItemList;
+	}
 
 	public void setItemList(ArrayList<Item> itemList) {
 		this.itemList = itemList;

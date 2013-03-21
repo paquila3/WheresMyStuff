@@ -24,8 +24,8 @@ public class FoundItemActivity extends Activity {
 						EditText descriptText=(EditText)findViewById(R.id.found_description);
 						String description=descriptText.getText().toString();
 						FoundItem found= new FoundItem(name, description, null);
-						if(WheresMyStuff.add(found)){
-							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
+						if(WheresMyStuff.addFound(found)){
+							Intent foundIntent = new Intent(FoundItemActivity.this, FoundItemListActivity.class);
 							startActivity(foundIntent);
 							finish();
 						}

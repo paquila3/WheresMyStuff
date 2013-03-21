@@ -63,11 +63,19 @@ public class WheresMyStuff extends Application {
 		return getActiveUser().add(item);
 	}
 	
+	static boolean addFound(Item item){
+		return getActiveUser().addFound(item);
+	}
+	
+	static boolean addDonate(Item item){
+		return getActiveUser().addDonate(item);
+	}
+	
 	public static ArrayList<User> getUserList() {
 		return userList;
 	}
 	
-	public static void makeAdmin(User oldUser){//Cory-check this
+	public static void makeAdmin(User oldUser){
 		promoteUser(oldUser);
 	}
 

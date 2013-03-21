@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 public class ItemListActivity extends ListActivity {
@@ -27,6 +29,16 @@ public class ItemListActivity extends ListActivity {
 				addItem(i.toString());
 			}
 		}
+		
+		findViewById(R.id.back).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						Intent menuIntent = new Intent(ItemListActivity.this, AddItemActivity.class);
+						startActivity(menuIntent);
+						finish();
+					}
+				});
 		
 	}
 	
