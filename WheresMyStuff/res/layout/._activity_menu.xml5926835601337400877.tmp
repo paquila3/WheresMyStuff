@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity" >
+
+    <Button
+        android:id="@+id/logout_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/Logout" />
+
+    <Button
+        android:id="@+id/lost_button"
+        style="@style/AppBaseTheme"
+        android:layout_width="250dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/logout_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Lost" />
+
+    <Button
+        android:id="@+id/Donate_button"
+        android:layout_width="250dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/lost_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Donate" />
+
+    <Button
+        android:id="@+id/Found_button"
+        android:layout_width="250dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/Donate_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Found" />
+
+    <Button
+        android:id="@+id/admin_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/Admin" />
+
+</RelativeLayout>
