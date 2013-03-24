@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class FoundItemActivity extends Activity {
 
@@ -23,7 +24,24 @@ public class FoundItemActivity extends Activity {
 						String name=nameText.getText().toString();
 						EditText descriptText=(EditText)findViewById(R.id.found_description);
 						String description=descriptText.getText().toString();
-						FoundItem found= new FoundItem(name, description, null);
+						RadioButton keepsake= (RadioButton)findViewById(R.id.found_keepsake);
+						RadioButton heirloom= (RadioButton)findViewById(R.id.found_heirloom);
+						RadioButton picture= (RadioButton)findViewById(R.id.found_picture);
+						RadioButton misc= (RadioButton)findViewById(R.id.found_misc);
+						String type="";
+						if (keepsake.isChecked()){
+							type="Keepsake";
+						}
+						else if(heirloom.isChecked()){
+							type="Heirloom";
+						}
+						else if(picture.isChecked()){
+							type="Picture";
+						}
+						else if(misc.isChecked()){
+							type="Misc";
+						}
+						FoundItem found= new FoundItem(name, description, null,type);
 						if(WheresMyStuff.addFound(found)){
 							Intent foundIntent = new Intent(FoundItemActivity.this, FoundItemListActivity.class);
 							startActivity(foundIntent);

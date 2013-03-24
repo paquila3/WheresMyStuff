@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class AddItemActivity extends Activity {
 
@@ -29,7 +30,24 @@ public class AddItemActivity extends Activity {
 						String phoneNumber=phoneText.getText().toString();
 						EditText emailText=(EditText)findViewById(R.id.lost_email);
 						String email=emailText.getText().toString();
-						LostItem lost= new LostItem(name, description, contact , phoneNumber, email);
+						RadioButton keepsake= (RadioButton)findViewById(R.id.lost_keepsake);
+						RadioButton heirloom= (RadioButton)findViewById(R.id.lost_heirloom);
+						RadioButton picture= (RadioButton)findViewById(R.id.lost_picture);
+						RadioButton misc= (RadioButton)findViewById(R.id.lost_misc);
+						String type="";
+						if (keepsake.isChecked()){
+							type="Keepsake";
+						}
+						else if(heirloom.isChecked()){
+							type="Heirloom";
+						}
+						else if(picture.isChecked()){
+							type="Picture";
+						}
+						else if(misc.isChecked()){
+							type="Misc";
+						}
+						LostItem lost= new LostItem(name, description, contact , phoneNumber, email,type);
 						if(WheresMyStuff.add(lost)){
 							Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);

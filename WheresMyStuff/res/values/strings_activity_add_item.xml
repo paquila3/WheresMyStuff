@@ -6,4 +6,9 @@
         <string name="lost_contact_name">Contact Name:</string>
         <string name="lost_phone_number">Phone Number:</string>
         <string name="lost_email">E-mail:</string>
+        <string name="lost_heirloom">Heirloom</string>
+        <string name="lost_picture">Picture</string>
+        <string name="lost_keepsake">Keepsake</string>
+        <string name="lost_misc">Misc</string>
+        <string name="lost_item_type">What type of item?</string>
     </resources>

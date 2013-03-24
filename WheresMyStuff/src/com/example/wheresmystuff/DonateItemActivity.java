@@ -31,7 +31,6 @@ public class DonateItemActivity extends Activity {
 						RadioButton toys= (RadioButton)findViewById(R.id.toys_radio);
 						RadioButton clothing= (RadioButton)findViewById(R.id.clothing_radio);
 						String type="";
-						try {
 						if (healthcare.isChecked()){
 							type="Healthcare";
 						}
@@ -43,14 +42,11 @@ public class DonateItemActivity extends Activity {
 						}
 						else if(clothing.isChecked()){
 							type="Clothing";
-						} else throw new Exception();
-							} catch (Exception e) {
-								Button submit= (Button) findViewById(R.id.submit);
-								submit.setError(getString(R.string.error_select_type));
-								View focusView = submit;
-								focusView.requestFocus();
-								e.printStackTrace();
-							}
+						}
+						else{
+							type="";
+						}
+							
 						DonateItem donate= new DonateItem(name, description, type, location);
 						if(WheresMyStuff.addDonate(donate)){
 							Intent foundIntent = new Intent(DonateItemActivity.this, DonateItemListActivity.class);
