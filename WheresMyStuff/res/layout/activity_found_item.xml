@@ -28,16 +28,6 @@
         android:ems="10"
         android:inputType="textMultiLine" />
 
-    <TextView
-        android:id="@+id/found_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/found_description_text"
-        android:layout_below="@+id/found_title_text"
-        android:layout_marginTop="40dp"
-        android:text="@string/found_description"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/found_description"
         android:layout_width="wrap_content"
@@ -69,25 +59,6 @@
         android:layout_alignParentTop="true"
         android:text="@string/DigitalClock" />
 
-    <TextView
-        android:id="@+id/found_location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:text="@string/found_upload_image"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ImageButton
-        android:id="@+id/found_item_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="21dp"
-        android:layout_toLeftOf="@+id/found_digitalClock1"
-        android:contentDescription="@string/found_image"
-        android:src="@android:drawable/ic_menu_camera" />
-
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
@@ -105,5 +76,77 @@
         android:layout_alignBottom="@+id/submit"
         android:layout_alignLeft="@+id/found_location_text"
         android:text="@string/back" />
+
+    <TextView
+        android:id="@+id/found_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_description_text"
+        android:layout_below="@+id/found_title_text"
+        android:layout_marginTop="17dp"
+        android:text="@string/found_description"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/found_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit"
+        android:layout_marginBottom="37dp"
+        android:layout_toLeftOf="@+id/submit"
+        android:contentDescription="@string/found_image"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/found_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_item_name"
+        android:layout_below="@+id/found_description"
+        android:layout_marginTop="18dp"
+        android:text="@string/found_item_type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/found_heirloom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_keepsake"
+        android:layout_below="@+id/found_keepsake"
+        android:text="@string/found_heirloom" />
+
+    <RadioButton
+        android:id="@+id/found_misc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/found_heirloom"
+        android:layout_alignBottom="@+id/found_heirloom"
+        android:layout_alignLeft="@+id/found_picture"
+        android:text="@string/found_misc" />
+
+    <RadioButton
+        android:id="@+id/found_keepsake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/found_type"
+        android:layout_below="@+id/found_type"
+        android:text="@string/found_keepsake" />
+
+    <TextView
+        android:id="@+id/found_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/found_item_image"
+        android:layout_alignLeft="@+id/found_type"
+        android:text="@string/found_upload_image"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/found_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/found_misc"
+        android:layout_alignLeft="@+id/found_item_image"
+        android:text="@string/found_picture" />
 
 </RelativeLayout>

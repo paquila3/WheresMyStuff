@@ -74,13 +74,12 @@ public class AdminActivity extends Activity {
 					}
 				});
 		
-		findViewById(R.id.logout_button2).setOnClickListener(
+		findViewById(R.id.back).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						WheresMyStuff.setActiveUser(null);
-						Intent myIntent = new Intent(AdminActivity.this, LoginActivity.class);
-						startActivity(myIntent);
+						Intent menuIntent = new Intent(AdminActivity.this, MenuActivity.class);
+						startActivity(menuIntent);
 						finish();
 					}
 				});

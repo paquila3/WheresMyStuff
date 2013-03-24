@@ -37,26 +37,6 @@
         android:layout_marginBottom="34dp"
         android:text="@string/submit" />
 
-    <TextView
-        android:id="@+id/lost_description_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="122dp"
-        android:text="@string/lost_description"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/lost_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/lost_description"
-        android:layout_alignLeft="@+id/lost_description_text"
-        android:layout_marginBottom="22dp"
-        android:text="@string/lost_name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/lost_name"
         android:layout_width="wrap_content"
@@ -86,15 +66,6 @@
         android:text="@string/lost_title_text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/lost_location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lost_description_text"
-        android:layout_centerVertical="true"
-        android:text="@string/lost_contact_name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/lost_contact_name"
         android:layout_width="wrap_content"
@@ -104,15 +75,6 @@
         android:layout_toRightOf="@+id/lost_location_text"
         android:ems="10"
         android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/lost_phone_number_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lost_location_text"
-        android:layout_below="@+id/lost_location_text"
-        android:text="@string/lost_phone_number"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/lost_phone_number"
@@ -124,15 +86,6 @@
         android:ems="10"
         android:inputType="phone" />
 
-    <TextView
-        android:id="@+id/lost_email_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/lost_phone_number_text"
-        android:text="@string/lost_email"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/lost_email"
         android:layout_width="wrap_content"
@@ -141,6 +94,94 @@
         android:layout_alignLeft="@+id/lost_name"
         android:ems="10"
         android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/lost_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_phone_number_text"
+        android:layout_below="@+id/lost_phone_number"
+        android:text="@string/lost_email"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/lost_heirloom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/back"
+        android:layout_below="@+id/type_text_lost"
+        android:text="@string/lost_heirloom" />
+
+    <RadioButton
+        android:id="@+id/lost_misc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_keepsake"
+        android:layout_below="@+id/lost_keepsake"
+        android:text="@string/lost_misc" />
+
+    <RadioButton
+        android:id="@+id/lost_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_heirloom"
+        android:layout_below="@+id/lost_heirloom"
+        android:text="@string/lost_picture" />
+
+    <TextView
+        android:id="@+id/lost_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/type_text_lost"
+        android:layout_below="@+id/lost_picture"
+        android:text="@string/lost_contact_name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lost_phone_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_location_text"
+        android:layout_below="@+id/lost_contact_name"
+        android:text="@string/lost_phone_number"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/lost_keepsake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lost_heirloom"
+        android:layout_alignBottom="@+id/lost_heirloom"
+        android:layout_toRightOf="@+id/type_text_lost"
+        android:text="@string/lost_keepsake" />
+
+    <TextView
+        android:id="@+id/lost_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_title_text"
+        android:layout_below="@+id/lost_title_text"
+        android:text="@string/lost_name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lost_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_item_name"
+        android:layout_below="@+id/lost_name"
+        android:text="@string/lost_description"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/type_text_lost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lost_description_text"
+        android:layout_below="@+id/lost_description"
+        android:layout_marginTop="25dp"
+        android:text="@string/lost_item_type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/back"

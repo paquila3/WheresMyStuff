@@ -8,32 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".DonateItemActivity" >
 
-    <DigitalClock
-        android:id="@+id/donate_digitalClock1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/DigitalClock" />
-
-    <TextView
-        android:id="@+id/donate_title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/donate_digitalClock1"
-        android:text="@string/donate_title_text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <RadioButton
-        android:id="@+id/clothing_radio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/donate_title_text"
-        android:layout_marginTop="20dp"
-        android:text="@string/donate_clothing" />
-
     <RadioButton
         android:id="@+id/healthcare_radio"
         android:layout_width="wrap_content"
@@ -81,43 +55,15 @@
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/donate_description_texts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:text="@string/donate_details"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/donate_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/donate_description_texts"
         android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/donate_description_texts"
         android:ems="10"
         android:inputType="textMultiLine" />
-
-    <TextView
-        android:id="@+id/donate_location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/donate_description_texts"
-        android:layout_marginTop="14dp"
-        android:text="@string/donate_location_to_send"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/donate_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/lost_description"
-        android:layout_below="@+id/lost_description"
-        android:layout_toRightOf="@+id/donate_location_text"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
 
     <Button
         android:id="@+id/back"
@@ -132,10 +78,63 @@
         android:id="@+id/donate_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/submit"
-        android:layout_toRightOf="@+id/donate_location_text"
+        android:layout_alignBaseline="@+id/back"
+        android:layout_alignBottom="@+id/back"
+        android:layout_alignRight="@+id/donate_description"
         android:text="@string/donate_confirm" />
+
+    <DigitalClock
+        android:id="@+id/donate_digitalClock1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/donate_name"
+        android:text="@string/DigitalClock" />
+
+    <TextView
+        android:id="@+id/donate_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/clothing_radio"
+        android:layout_below="@+id/donate_digitalClock1"
+        android:text="@string/donate_title_text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioButton
+        android:id="@+id/clothing_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/donate_title_text"
+        android:layout_toLeftOf="@+id/donate_name"
+        android:text="@string/donate_clothing" />
+
+    <EditText
+        android:id="@+id/donate_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/donate_location_text"
+        android:layout_alignBottom="@+id/donate_location_text"
+        android:layout_alignRight="@+id/donate_description"
+        android:layout_toRightOf="@+id/donate_location_text"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
+
+    <TextView
+        android:id="@+id/donate_description_texts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/donate_item_name"
+        android:layout_below="@+id/donate_item_name"
+        android:text="@string/donate_details"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/donate_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/donate_description_texts"
+        android:layout_below="@+id/donate_description"
+        android:text="@string/donate_location_to_send"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

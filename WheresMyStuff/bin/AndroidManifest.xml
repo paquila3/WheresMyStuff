@@ -43,6 +43,18 @@
             android:name="com.example.wheresmystuff.AdminActivity"
             android:label="@string/title_activity_admin" >
         </activity>
+        <activity
+            android:name="com.example.wheresmystuff.FoundITemList"
+            android:label="@string/title_activity_found_item_list" >
+        </activity>
+        <activity
+            android:name="com.example.wheresmystuff.FoundItemListActivity"
+            android:label="@string/title_activity_found_item_list" >
+        </activity>
+        <activity
+            android:name="com.example.wheresmystuff.DonateItemListActivity"
+            android:label="@string/title_activity_donate_item_list" >
+        </activity>
     </application>
 
 </manifest>

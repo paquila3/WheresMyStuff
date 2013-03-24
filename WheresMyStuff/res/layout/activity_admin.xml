@@ -54,12 +54,12 @@
     </ListView>
 
     <Button
-        android:id="@+id/logout_button2"
+        android:id="@+id/back"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/Add_Admin"
-        android:text="@string/Logout" />
+        android:text="@string/back" />
 
 </RelativeLayout>

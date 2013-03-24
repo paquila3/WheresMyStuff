@@ -5,4 +5,9 @@
         <string name="found_description">Description:</string>
         <string name="found_upload_image">Upload Image:</string>
         <string name="found_image">found_image</string>
+        <string name="found_heirloom">Heirloom</string>
+        <string name="found_keepsake">Keepsake</string>
+        <string name="found_picture">Picture</string>
+        <string name="found_misc">Misc</string>
+        <string name="found_item_type">What type of item?</string>
     </resources>
