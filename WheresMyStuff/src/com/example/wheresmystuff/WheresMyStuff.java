@@ -1,10 +1,14 @@
 package com.example.wheresmystuff;
 
+import java.util.Calendar;
+
 import android.app.Application;
 import java.util.ArrayList;
 
 public class WheresMyStuff extends Application {
 
+	public static Calendar currentTime = Calendar.getInstance();
+	
 	private static ArrayList<User> userList = new ArrayList<User>();
 	private static User activeUser;
 	private static boolean init;

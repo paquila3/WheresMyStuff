@@ -4,7 +4,11 @@ public class LostItem extends Item{
 	private String contact, number, email;
 	//standard constructor
 	public LostItem(String name, String description, String contact, String number, String email) {
-		super(name, description);
+		this(name, description, contact, number, email, 0);
+	}
+	
+	public LostItem(String name, String description, String contact, String number, String email, long date) {
+		super(name, description, date);
 		this.contact=contact;
 		this.number=number;
 		this.email=email;

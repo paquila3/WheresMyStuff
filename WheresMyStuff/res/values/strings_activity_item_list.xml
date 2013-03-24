@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Category">Category</string>
+    <string name="All">All</string>
+    <string name="Today">Today</string>
+    <string name="Seven_Days">7 Days</string>
+    <string name="Thirty_Days">30 Days</string>
+    <string name="Resolved">Resolved</string>
+    <string name="Filter">Filter</string>
+    
+</resources>

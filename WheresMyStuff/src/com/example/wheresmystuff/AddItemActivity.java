@@ -29,7 +29,7 @@ public class AddItemActivity extends Activity {
 						String phoneNumber=phoneText.getText().toString();
 						EditText emailText=(EditText)findViewById(R.id.lost_email);
 						String email=emailText.getText().toString();
-						LostItem lost= new LostItem(name, description, contact , phoneNumber, email);
+						LostItem lost= new LostItem(name, description, contact, phoneNumber, email, WheresMyStuff.currentTime.getTimeInMillis());
 						if(WheresMyStuff.add(lost)){
 							Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);
