@@ -199,84 +199,48 @@ public class ItemListActivity extends ListActivity {
 	protected void populateList() {
 		for (User u : WheresMyStuff.getUserList())
 		{
-			if (filterLostFound == 0 || filterLostFound == 1) {
-				for (Item i : u.getItemList())
-				{
-					boolean toAdd = true;
-					if (!filterCategory.equals("")) {
-						if (!(i.getCategory().equals(filterCategory))) {
-							toAdd = false;
-						}
-					}
-					if (filterDate != 0) {
-						if (i.getDate() == 0) {
-							toAdd = false;
-						} else {
-							switch (filterDate) {
-								case 1:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY) {
-										toAdd = false;
-									}
-									break;
-								case 2:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 7) {
-										toAdd = false;
-									}
-									break;
-								case 3:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 30) {
-										toAdd = false;
-									}
-									break;
-							}
-						}
-					}
-					if (i.isResolved() != filterStatus) {
+			for (Item i : u.getItemList())
+			{
+				boolean toAdd = true;
+				if (filterLostFound == 1 && !(i instanceof LostItem)) {
+					toAdd = false;
+				}
+				if (filterLostFound == 2 && !(i instanceof FoundItem)) {
+					toAdd = false;
+				}
+				if (!filterCategory.equals("")) {
+					if (!(i.getCategory().equals(filterCategory))) {
 						toAdd = false;
-					}
-					if (toAdd) {
-						addItem(i.toString());
 					}
 				}
-			}
-			if (filterLostFound == 0 || filterLostFound == 2) {
-				for (Item i : u.getFoundItemList())
-				{
-					boolean toAdd = true;
-					if (!filterCategory.equals("")) {
-						if (!(i.getCategory().equals(filterCategory))) {
-							toAdd = false;
-						}
-					}
-					if (filterDate != 0) {
-						if (i.getDate() == 0) {
-							toAdd = false;
-						} else {
-							switch (filterDate) {
-								case 1:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY) {
-										toAdd = false;
-									}
-									break;
-								case 2:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 7) {
-										toAdd = false;
-									}
-									break;
-								case 3:
-									if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 30) {
-										toAdd = false;
-									}
-									break;
-							}
-						}
-					}
-					if (i.isResolved() != filterStatus) {
+				if (filterDate != 0) {
+					if (i.getDate() == 0) {
 						toAdd = false;
+					} else {
+						switch (filterDate) {
+							case 1:
+								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY) {
+									toAdd = false;
+								}
+								break;
+							case 2:
+								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 7) {
+									toAdd = false;
+								}
+								break;
+							case 3:
+								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 30) {
+									toAdd = false;
+								}
+								break;
+						}
 					}
-					if (toAdd) {
-						addItem(i.toString());
-					}
+				}
+				if (i.isResolved() != filterStatus) {
+					toAdd = false;
+				}
+				if (toAdd) {
+					addItem(i.toString());
 				}
 			}
 		}

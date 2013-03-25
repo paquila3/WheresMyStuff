@@ -30,26 +30,6 @@ public class User {
 		return true;
 	}
 	
-	boolean addFound(Item item){
-		try{
-		foundItemList.add(item);
-		}
-		catch(Exception e){
-			return false;
-		}
-		return true;
-	}
-	
-	boolean addDonate(Item item){
-		try{
-		donateItemList.add(item);
-		}
-		catch(Exception e){
-			return false;
-		}
-		return true;
-	}
-	
 	public String getUsername() {
 		return username;
 	}

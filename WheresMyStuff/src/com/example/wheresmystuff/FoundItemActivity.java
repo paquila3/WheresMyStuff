@@ -44,7 +44,7 @@ public class FoundItemActivity extends Activity {
 							type="Misc";
 						}
 						FoundItem found= new FoundItem(name, description, null, type, WheresMyStuff.currentTime.getTimeInMillis());
-						if(WheresMyStuff.addFound(found)){
+						if(WheresMyStuff.add(found)){
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);
 							finish();
