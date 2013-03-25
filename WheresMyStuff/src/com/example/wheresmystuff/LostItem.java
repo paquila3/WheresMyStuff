@@ -8,7 +8,7 @@ public class LostItem extends Item{
 	}
 	
 	public LostItem(String name, String description, String contact, String number, String email, String type, long date) {
-		super(name, description, date);
+		super(name, description);
 		this.contact=contact;
 		this.number=number;
 		this.email=email;
