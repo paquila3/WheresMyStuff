@@ -61,7 +61,18 @@ public class ItemListActivity extends ListActivity {
 						populateList();
 					}
 				});
-		
+		findViewById(R.id.back).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						Intent foundIntent = new Intent(ItemListActivity.this, MenuActivity.class);
+						startActivity(foundIntent);
+						finish();
+						
+					}	
+				});
 	}
 	
 	protected void populateList() {
