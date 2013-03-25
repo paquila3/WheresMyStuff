@@ -12,7 +12,7 @@ public class LostItem extends Item{
 		this.contact=contact;
 		this.number=number;
 		this.email=email;
-		this.type=type;
+		this.setCategory(type);
 	}
 
 	public String getContact() {

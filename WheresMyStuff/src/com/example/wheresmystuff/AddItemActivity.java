@@ -16,6 +16,8 @@ public class AddItemActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_item);
 		
+		((RadioButton)findViewById(R.id.lost_misc)).setChecked(true);
+		
 		findViewById(R.id.submit).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
@@ -47,7 +49,7 @@ public class AddItemActivity extends Activity {
 						else if(misc.isChecked()){
 							type="Misc";
 						}
-						LostItem lost= new LostItem(name, description, contact , phoneNumber, email,type);
+						LostItem lost= new LostItem(name, description, contact , phoneNumber, email, type, WheresMyStuff.currentTime.getTimeInMillis());
 						if(WheresMyStuff.add(lost)){
 							Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);
@@ -61,6 +63,7 @@ public class AddItemActivity extends Activity {
 						}
 					}
 				});
+		
 		findViewById(R.id.back).setOnClickListener(
 				new View.OnClickListener() {
 					
@@ -70,6 +73,58 @@ public class AddItemActivity extends Activity {
 						Intent foundIntent = new Intent(AddItemActivity.this, MenuActivity.class);
 						startActivity(foundIntent);
 						finish();
+						
+					}	
+				});
+		
+		findViewById(R.id.lost_keepsake).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						((RadioButton)findViewById(R.id.lost_heirloom)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_picture)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_misc)).setChecked(false);
+						
+					}	
+				});
+		
+		findViewById(R.id.lost_heirloom).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						((RadioButton)findViewById(R.id.lost_keepsake)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_picture)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_misc)).setChecked(false);
+						
+					}	
+				});
+		
+		findViewById(R.id.lost_picture).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						((RadioButton)findViewById(R.id.lost_heirloom)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_keepsake)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_misc)).setChecked(false);
+						
+					}	
+				});
+		
+		findViewById(R.id.lost_misc).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						((RadioButton)findViewById(R.id.lost_heirloom)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_picture)).setChecked(false);
+						((RadioButton)findViewById(R.id.lost_keepsake)).setChecked(false);
 						
 					}	
 				});

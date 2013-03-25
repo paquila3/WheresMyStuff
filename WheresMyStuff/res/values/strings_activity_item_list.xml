@@ -7,5 +7,11 @@
     <string name="Thirty_Days">30 Days</string>
     <string name="Resolved">Resolved</string>
     <string name="Filter">Filter</string>
+    <string name="list_keepsake">Keepsake</string>
+    <string name="list_heirloom">Heirloom</string>
+    <string name="list_picture">Picture</string>
+    <string name="list_misc">Misc</string>
+    <string name="list_date">Date</string>
+    <string name="list_itemList">Item List</string>
     
 </resources>

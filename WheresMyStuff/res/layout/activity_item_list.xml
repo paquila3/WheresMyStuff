@@ -8,70 +8,98 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemListActivity" >
 
-    <EditText
-        android:id="@+id/editTextCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@android:id/list"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:hint="@string/Category"
-        android:inputType="text" >
-
-        <requestFocus />
-    </EditText>
-
-    <RadioGroup
-        android:id="@+id/radioGroupDate"
+    <RadioButton
+        android:id="@+id/radioKeepsake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editTextCategory"
-        android:orientation="horizontal" >
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/found_keepsake" />
 
-        <RadioButton
-            android:id="@+id/radioAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/All" />
-
-        <RadioButton
-            android:id="@+id/radioToday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Today" />
-
-        <RadioButton
-            android:id="@+id/radioSevenDays"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Seven_Days" />
-
-        <RadioButton
-            android:id="@+id/radioThirtyDays"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Thirty_Days" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/buttonFlter"
-        style="?android:attr/buttonStyleSmall"
+    <RadioButton
+        android:id="@+id/radioHeirloom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editTextCategory"
-        android:layout_alignTop="@+id/checkBoxResolved"
-        android:layout_marginRight="20dp"
-        android:text="@string/Filter" />
+        android:layout_alignBaseline="@+id/radioKeepsake"
+        android:layout_alignBottom="@+id/radioKeepsake"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/radioKeepsake"
+        android:text="@string/found_heirloom" />
 
     <CheckBox
         android:id="@+id/checkBoxResolved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroupDate"
-        android:layout_below="@+id/radioGroupDate"
+        android:layout_alignTop="@+id/buttonFlter"
         android:text="@string/Resolved" />
+
+    <RadioButton
+        android:id="@+id/radioAllCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioPicture"
+        android:layout_below="@+id/radioPicture"
+        android:text="@string/All" />
+
+    <RadioButton
+        android:id="@+id/radioMisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioAllCategory"
+        android:layout_alignLeft="@+id/radioHeirloom"
+        android:text="@string/list_misc" />
+
+    <RadioButton
+        android:id="@+id/radioPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioKeepsake"
+        android:layout_below="@+id/radioKeepsake"
+        android:text="@string/list_picture" />
+
+    <RadioButton
+        android:id="@+id/radioThirtyDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioSevenDays"
+        android:layout_toRightOf="@+id/radioToday"
+        android:text="@string/Thirty_Days" />
+
+    <RadioButton
+        android:id="@+id/radioSevenDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/radioAll"
+        android:layout_alignBottom="@+id/radioAll"
+        android:layout_toRightOf="@+id/radioToday"
+        android:text="@string/Seven_Days" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioAllCategory"
+        android:text="@string/list_date"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <RadioButton
+        android:id="@+id/radioAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioAllCategory"
+        android:layout_below="@+id/textView2"
+        android:text="@string/All" />
+
+    <RadioButton
+        android:id="@+id/radioToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxResolved"
+        android:layout_alignLeft="@+id/radioAll"
+        android:text="@string/Today" />
 
     <ListView
         android:id="@android:id/list"
@@ -81,5 +109,34 @@
         android:layout_below="@+id/buttonFlter" >
 
     </ListView>
-    
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonFlter"
+        android:layout_alignLeft="@+id/checkBoxResolved"
+        android:text="@string/list_itemList"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/buttonFlter"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@android:id/list"
+        android:layout_below="@+id/radioThirtyDays"
+        android:height="20dp"
+        android:text="@string/Filter"
+        android:width="80dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:text="@string/Category"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
 </RelativeLayout>
