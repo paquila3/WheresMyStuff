@@ -43,7 +43,7 @@ public class FoundItemActivity extends Activity {
 						else if(misc.isChecked()){
 							type="Misc";
 						}
-						FoundItem found= new FoundItem(name, description, null, type, WheresMyStuff.currentTime.getTimeInMillis());
+						FoundItem found= new FoundItem(name, description, null, type);
 						if(WheresMyStuff.add(found)){
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);

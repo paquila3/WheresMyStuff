@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -193,7 +194,18 @@ public class ItemListActivity extends ListActivity {
 						
 					}	
 				});
-		
+		findViewById(R.id.back).setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+
+						Intent foundIntent = new Intent(ItemListActivity.this, MenuActivity.class);
+						startActivity(foundIntent);
+						finish();
+						
+					}	
+				});
 	}
 	
 	protected void populateList() {

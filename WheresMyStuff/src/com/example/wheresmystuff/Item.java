@@ -2,21 +2,18 @@ package com.example.wheresmystuff;
 
 abstract class Item {
 	private String name, description, category;
-	private long date; //milliseconds since January 1, 1970
+	private final long date; //milliseconds since January 1, 1970
 	private boolean resolved;
 	//super-constructor for all items.
+	
 	public Item(String name, String description){
-		this(name, description, 0, "");
+		this(name, description, "");
 	}
 	
-	public Item(String name, String description, long date){
-		this(name, description, date, "");
-	}
-	
-	public Item(String name, String description, long date, String category){
+	public Item(String name, String description, String category){
 		this.setName(name);
 		this.setDescription(description);
-		this.setDate(date);
+		this.date=WheresMyStuff.currentTime.getTimeInMillis();
 		this.setCategory(category);
 		setResolved(false);
 	}
@@ -43,10 +40,6 @@ abstract class Item {
 	
 	public long getDate() {
 		return date;
-	}
-	
-	public void setDate(long date) {
-		this.date = date;
 	}
 
 	public String getCategory() {
