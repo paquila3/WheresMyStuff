@@ -65,12 +65,16 @@ public class ItemListActivity extends ListActivity {
 	}
 	
 	protected void populateList() {
+		// filter_type is either "lost" or "found"
+		Intent intent = getIntent();
+		String filter_type = intent.getStringExtra("filter");
 		for (User u : WheresMyStuff.getUserList())
 		{
 			for (Item i : u.getItemList())
 			{
 				boolean toAdd = true;
-				if (!(i instanceof LostItem)) {
+				if ((filter_type == "found" && i instanceof LostItem) || (filter_type == "lost" && i instanceof FoundItem))
+				{
 					toAdd = false;
 				}
 				if (!filterCategory.equals("")) {

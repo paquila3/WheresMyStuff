@@ -49,8 +49,9 @@ public class AddItemActivity extends Activity {
 						}
 						LostItem lost= new LostItem(name, description, contact , phoneNumber, email,type);
 						if(WheresMyStuff.add(lost)){
-							Intent foundIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
-							startActivity(foundIntent);
+							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
+							lostIntent.putExtra("filter", "lost");
+							startActivity(lostIntent);
 							finish();
 						}
 						else{
@@ -66,9 +67,8 @@ public class AddItemActivity extends Activity {
 					
 					@Override
 					public void onClick(View v) {
-
-						Intent foundIntent = new Intent(AddItemActivity.this, MenuActivity.class);
-						startActivity(foundIntent);
+						Intent lostIntent = new Intent(AddItemActivity.this, MenuActivity.class);
+						startActivity(lostIntent);
 						finish();
 						
 					}	

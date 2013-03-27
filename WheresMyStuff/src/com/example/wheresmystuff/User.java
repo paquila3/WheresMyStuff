@@ -32,7 +32,7 @@ public class User {
 	
 	boolean addFound(Item item){
 		try{
-		foundItemList.add(item);
+		itemList.add(item);
 		}
 		catch(Exception e){
 			return false;
