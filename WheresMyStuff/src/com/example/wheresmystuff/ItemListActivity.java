@@ -21,6 +21,7 @@ public class ItemListActivity extends ListActivity {
     String filterCategory = "";
     int filterDate = 0; //0 = all time; 1 = today; 2 = last 7 days; 3 = last 30 days
     boolean filterStatus = false; //false = open; true = resolved
+    public static String type = "all";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,10 @@ public class ItemListActivity extends ListActivity {
 			{
 				boolean toAdd = true;
 				if ((filter_type == "found" && i instanceof LostItem) || (filter_type == "lost" && i instanceof FoundItem))
+				{
+					toAdd = false;
+				}
+				if ((type == "found" && i instanceof LostItem) || (type == "lost" && i instanceof FoundItem))
 				{
 					toAdd = false;
 				}

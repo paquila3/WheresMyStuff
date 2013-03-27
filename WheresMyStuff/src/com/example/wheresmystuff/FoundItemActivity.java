@@ -44,6 +44,7 @@ public class FoundItemActivity extends Activity {
 						FoundItem found= new FoundItem(name, description, null,type);
 						if(WheresMyStuff.addFound(found)){
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
+							ItemListActivity.type = "found";
 							foundIntent.putExtra("filter", "found");
 							startActivity(foundIntent);
 							finish();

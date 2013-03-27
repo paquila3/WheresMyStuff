@@ -51,6 +51,7 @@ public class AddItemActivity extends Activity {
 						if(WheresMyStuff.add(lost)){
 							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							lostIntent.putExtra("filter", "lost");
+							ItemListActivity.type = "lost";
 							startActivity(lostIntent);
 							finish();
 						}
