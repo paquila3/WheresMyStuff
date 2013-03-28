@@ -72,7 +72,7 @@ public class ItemListActivity extends ListActivity {
 						populateList();
 					}
 				});
-		
+//		
 		findViewById(R.id.radioKeepsake).setOnClickListener(
 				new View.OnClickListener() {
 					
@@ -114,7 +114,7 @@ public class ItemListActivity extends ListActivity {
 						
 					}	
 				});
-		
+//		
 		findViewById(R.id.radioMisc).setOnClickListener(
 				new View.OnClickListener() {
 					
