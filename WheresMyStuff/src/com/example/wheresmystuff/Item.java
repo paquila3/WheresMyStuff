@@ -11,10 +11,10 @@ abstract class Item {
 	}
 	
 	public Item(String name, String description, String category){
-		this.setName(name);
-		this.setDescription(description);
+		this.name=name;
+		this.description=(description);
 		this.date=WheresMyStuff.currentTime.getTimeInMillis();
-		this.setCategory(category);
+		this.category=category;
 		setResolved(false);
 	}
 	

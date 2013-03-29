@@ -43,9 +43,11 @@ public class FoundItemActivity extends Activity {
 						else if(misc.isChecked()){
 							type="Misc";
 						}
-						FoundItem found= new FoundItem(name, description, null, type);
+						Item found= new FoundItem(name, description, type);
 						if(WheresMyStuff.add(found)){
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
+
+							foundIntent.putExtra("filter", "found");
 							startActivity(foundIntent);
 							finish();
 						}
@@ -63,7 +65,6 @@ public class FoundItemActivity extends Activity {
 					
 					@Override
 					public void onClick(View v) {
-
 						Intent foundIntent = new Intent(FoundItemActivity.this, MenuActivity.class);
 						startActivity(foundIntent);
 						finish();

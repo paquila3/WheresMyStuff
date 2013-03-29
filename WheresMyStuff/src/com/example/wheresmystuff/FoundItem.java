@@ -9,9 +9,8 @@ public class FoundItem extends Item{
 	static Bitmap NO_IMAGE= BitmapFactory.decodeFile("/WheresMyStuff/no_image-web.png");
 	//Constructor for if it has an image
 	public FoundItem(String name, String description, Bitmap image, String type) {
-		super(name, description);
-		this.setImage(image);
-		this.setCategory(type);
+		super(name, description,type);
+		this.image=image;
 	}
 	//other constructor
 	public FoundItem(String name, String description, String type){

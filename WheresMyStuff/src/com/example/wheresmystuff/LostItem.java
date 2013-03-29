@@ -3,16 +3,13 @@ package com.example.wheresmystuff;
 public class LostItem extends Item{
 	private String contact, number, email, type;
 	//standard constructor
-	public LostItem(String name, String description, String contact, String number, String email, String type) {
-		this(name, description, contact, number, email, type, 0);
-	}
+
 	
-	public LostItem(String name, String description, String contact, String number, String email, String type, long date) {
-		super(name, description);
+	public LostItem(String name, String description, String contact, String number, String email, String type) {
+		super(name, description,type);
 		this.contact=contact;
 		this.number=number;
 		this.email=email;
-		this.setCategory(type);
 	}
 
 	public String getContact() {
