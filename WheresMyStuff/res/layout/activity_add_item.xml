@@ -216,12 +216,14 @@
         android:text="@string/lost_date"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <DatePicker
-        android:id="@+id/list_date_picker"
+    <EditText
+        android:id="@+id/lost_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lost_date_text"
-        android:layout_alignBottom="@+id/lost_date_text"
-        android:layout_toRightOf="@+id/lost_date_text" />
+        android:layout_alignRight="@+id/lost_date_text"
+        android:layout_below="@+id/lost_date_text"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/date_format" />
 
 </RelativeLayout>

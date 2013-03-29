@@ -61,14 +61,6 @@
         android:layout_alignLeft="@+id/checkKeepsake"
         android:text="@string/list_misc" />
 
-    <DatePicker
-        android:id="@+id/list_date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/list_date"
-        android:layout_alignBottom="@+id/list_date"
-        android:layout_toRightOf="@+id/back" />
-
     <CheckBox
         android:id="@+id/checkResolved"
         android:layout_width="wrap_content"
@@ -88,21 +80,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/list_date"
+        android:id="@+id/list_date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/list_status"
         android:layout_alignLeft="@+id/list_status"
         android:text="@string/list_date"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <CheckBox
-        android:id="@+id/checkPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/list_date_picker"
-        android:layout_alignLeft="@+id/list_date"
-        android:text="@string/list_picture" />
 
     <CheckBox
         android:id="@+id/checkHeirloom"
@@ -148,5 +132,27 @@
         android:layout_marginLeft="18dp"
         android:layout_toRightOf="@+id/list_found"
         android:text="@string/list_lost" />
+
+    <CheckBox
+        android:id="@+id/checkPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/list_date_text"
+        android:layout_alignLeft="@+id/list_date_text"
+        android:text="@string/list_picture" />
+
+    <EditText
+        android:id="@+id/list_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/list_date_text"
+        android:layout_alignBottom="@+id/list_date_text"
+        android:layout_toRightOf="@+id/list_date_text"
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/date_format" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

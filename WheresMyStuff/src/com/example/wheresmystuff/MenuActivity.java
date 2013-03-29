@@ -18,6 +18,7 @@ public class MenuActivity extends Activity {
 		findViewById(R.id.logout_button).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
+					
 					public void onClick(View view) {
 						WheresMyStuff.setActiveUser(null);
 						Intent myIntent = new Intent(MenuActivity.this, LoginActivity.class);
@@ -74,8 +75,6 @@ public class MenuActivity extends Activity {
 					
 					@Override
 					public void onClick(View view) {
-						if (!WheresMyStuff.getActiveUser().isAdmin())
-							return;
 						Intent itemListIntent = new Intent(MenuActivity.this, ItemListActivity.class);
 						startActivity(itemListIntent);
 						finish();
@@ -87,7 +86,7 @@ public class MenuActivity extends Activity {
 				new View.OnClickListener(){
 
 					@Override
-					public void onClick(View arg0) {
+					public void onClick(View view) {
 						// TODO Auto-generated method stub
 						((Button) findViewById(R.id.main_user_profile)).setError(getString(R.string.DNE));
 						

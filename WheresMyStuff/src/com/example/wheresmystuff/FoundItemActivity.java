@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -45,9 +44,22 @@ public class FoundItemActivity extends Activity {
 						else if(picture.isChecked()){
 							category=Item.PICTURE;
 						}
-						DatePicker datePicker= (DatePicker)findViewById(R.id.found_date);
+						EditText datePicker= (EditText)findViewById(R.id.found_date);
+						String dateString=datePicker.getText().toString();
+						int month=1,day=1,year=1;
+						if (dateString.charAt(2)=='/' && dateString.charAt(4)=='/' && dateString.length()==10){
+							month=Integer.parseInt(dateString.substring(3, 5));
+							day=Integer.parseInt(dateString.substring(0, 2));
+							year=Integer.parseInt(dateString.substring(6,10));
+						}
+						else{
+							Button submit= (Button) findViewById(R.id.submit);
+							submit.setError(getString(R.string.error_try_again));
+							View focusView = submit;
+							focusView.requestFocus();
+						}
 						@SuppressWarnings("deprecation")
-						Date d= new Date(datePicker.getYear()-1900, datePicker.getMonth(), datePicker.getDayOfMonth());;
+						Date d= new Date(year-1900, month-1, day);;
 						long date= d.getTime();
 						Item found= new FoundItem(name, description, category, location, date);
 						if(WheresMyStuff.add(found)){
