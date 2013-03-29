@@ -51,6 +51,7 @@ public class FoundItemActivity extends Activity {
 						long date= d.getTime();
 						Item found= new FoundItem(name, description, category, location, date);
 						if(WheresMyStuff.add(found)){
+
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
 
 							foundIntent.putExtra("filter", "found");

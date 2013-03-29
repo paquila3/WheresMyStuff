@@ -21,7 +21,7 @@ public class ItemListActivity extends ListActivity {
     @SuppressWarnings("deprecation")
 	long filterDate = (new Date(0,0,1)).getTime(); //changed to a long, initialized at Jan 1, 1900;
     int filterLostFound = 0; //0 = neither; 1 = lost only; 2 = found only 3=both. Changed for math reasons.
-    boolean filterStatus = false; //false = open; true = resolved
+	boolean filterStatus = false; //false = open; true = resolved
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -152,7 +152,23 @@ public class ItemListActivity extends ListActivity {
 		getMenuInflater().inflate(R.menu.item_list, menu);
 		return true;
 	}
-	
-	
+
+
+    public void setFilterCategory(boolean[] filterCategory) {
+		this.filterCategory = filterCategory;
+	}
+
+	public void setFilterDate(long filterDate) {
+		this.filterDate = filterDate;
+	}
+
+	public void setFilterLostFound(int filterLostFound) {
+		this.filterLostFound = filterLostFound;
+	}
+
+	public void setFilterStatus(boolean filterStatus) {
+		this.filterStatus = filterStatus;
+	}
+
 
 }
