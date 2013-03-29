@@ -51,8 +51,8 @@ public class AddItemActivity extends Activity {
 						}
 						LostItem lost= new LostItem(name, description, contact , phoneNumber, email, type);
 						if(WheresMyStuff.add(lost)){
+							ItemListActivity.setLostFoundFilter(1);
 							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
-							lostIntent.putExtra("filter", "lost");
 							startActivity(lostIntent);
 							finish();
 						}

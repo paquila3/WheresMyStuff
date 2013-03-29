@@ -19,7 +19,7 @@ public class ItemListActivity extends ListActivity {
     ArrayAdapter<String> adapter;
     String filterCategory = "";
     int filterDate = 0; //0 = all time; 1 = today; 2 = last 7 days; 3 = last 30 days
-    int filterLostFound = 0; //0 = both; 1 = lost only; 2 = found only
+    static int filterLostFound = 0; //0 = both; 1 = lost only; 2 = found only
     boolean filterStatus = false; //false = open; true = resolved
 
 	@Override
@@ -264,13 +264,15 @@ public class ItemListActivity extends ListActivity {
         adapter.notifyDataSetChanged();
 	}
 
+	public static void setLostFoundFilter(int filter) {
+		filterLostFound = filter;
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.item_list, menu);
 		return true;
 	}
-	
-	
 
 }
