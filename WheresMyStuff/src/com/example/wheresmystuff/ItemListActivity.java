@@ -20,20 +20,22 @@ public class ItemListActivity extends ListActivity {
     //using a boolean array now because booleans work better for checkboxes
     boolean[] filterCategory = {true,true,true,true}; //keepsake, heirloom, picture, misc
     @SuppressWarnings("deprecation")
-	long filterDate = (new Date(0,0,1)).getTime(); //changed to a long, initialized at Jan 1, 1900;
-    int filterLostFound = 0; //0 = neither; 1 = lost only; 2 = found only 3=both. Changed for math reasons.
+	long filterDate = (new Date(0,0,0)).getTime(); //changed to a long, initialized at Jan 1, 1900;
+    int filterLostFound = 3; //0 = neither; 1 = lost only; 2 = found only 3=both. Changed for math reasons.
 	boolean filterStatus = false; //false = open; true = resolved
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_item_list);
-		
+
+		((EditText)findViewById(R.id.list_date)).setText("01/01/1900");
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
 		setListAdapter(adapter);
 		
 		((CheckBox)findViewById(R.id.list_lost)).setChecked(true);
 		((CheckBox)findViewById(R.id.list_found)).setChecked(true);
+		
 		
 		populateList();
 		
@@ -84,16 +86,16 @@ public class ItemListActivity extends ListActivity {
 							filterLostFound+=2;
 						}
 
-						EditText datePicker= (EditText)findViewById(R.id.found_date);
+						EditText datePicker= (EditText)findViewById(R.id.list_date);
 						String dateString=datePicker.getText().toString();
-						int month=1,day=1,year=1;
-						if (dateString.charAt(2)=='/' && dateString.charAt(4)=='/' && dateString.length()==10){
+						int month=1,day=1,year=0;
+						if (dateString.charAt(2)=='/' && dateString.charAt(5)=='/' && dateString.length()==10){
 							month=Integer.parseInt(dateString.substring(3, 5));
 							day=Integer.parseInt(dateString.substring(0, 2));
 							year=Integer.parseInt(dateString.substring(6,10));
 						}
 						else{
-							Button submit= (Button) findViewById(R.id.submit);
+							Button submit= (Button) findViewById(R.id.buttonFlter);
 							submit.setError(getString(R.string.error_try_again));
 							View focusView = submit;
 							focusView.requestFocus();

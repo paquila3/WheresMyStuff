@@ -46,8 +46,8 @@ public class FoundItemActivity extends Activity {
 						}
 						EditText datePicker= (EditText)findViewById(R.id.found_date);
 						String dateString=datePicker.getText().toString();
-						int month=1,day=1,year=1;
-						if (dateString.charAt(2)=='/' && dateString.charAt(4)=='/' && dateString.length()==10){
+						int month=1,day=1,year=0;
+						if (dateString.charAt(2)=='/' && dateString.charAt(5)=='/' && dateString.length()==10){
 							month=Integer.parseInt(dateString.substring(3, 5));
 							day=Integer.parseInt(dateString.substring(0, 2));
 							year=Integer.parseInt(dateString.substring(6,10));
@@ -57,6 +57,7 @@ public class FoundItemActivity extends Activity {
 							submit.setError(getString(R.string.error_try_again));
 							View focusView = submit;
 							focusView.requestFocus();
+							return;
 						}
 						@SuppressWarnings("deprecation")
 						Date d= new Date(year-1900, month-1, day);;

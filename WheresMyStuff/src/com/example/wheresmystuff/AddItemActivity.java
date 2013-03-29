@@ -51,10 +51,10 @@ public class AddItemActivity extends Activity {
 						else if(picture.isChecked()){
 							category=Item.PICTURE;
 						}
-						EditText datePicker= (EditText)findViewById(R.id.found_date);
+						EditText datePicker= (EditText)findViewById(R.id.lost_date);
 						String dateString=datePicker.getText().toString();
-						int month=1,day=1,year=1;
-						if (dateString.charAt(2)=='/' && dateString.charAt(4)=='/' && dateString.length()==10){
+						int month=1,day=1,year=0;
+						if (dateString.charAt(2)=='/' && dateString.charAt(5)=='/' && dateString.length()==10){
 							month=Integer.parseInt(dateString.substring(3, 5));
 							day=Integer.parseInt(dateString.substring(0, 2));
 							year=Integer.parseInt(dateString.substring(6,10));
