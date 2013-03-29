@@ -30,24 +30,25 @@ public class DonateItemActivity extends Activity {
 						RadioButton food= (RadioButton)findViewById(R.id.food_radio);
 						RadioButton toys= (RadioButton)findViewById(R.id.toys_radio);
 						RadioButton clothing= (RadioButton)findViewById(R.id.clothing_radio);
-						String type="";
+						
+						//changed the type labels to category, to be uniform with elsewhere.
+						// also changed it to be an int so i can switch case it easily.
+						// for donate it sets default to MISC just, in the even tehy dont check one.
+						int category=Item.MISC;
 						if (healthcare.isChecked()){
-							type="Healthcare";
+							category=Item.HEALTHCARE;
 						}
 						else if(food.isChecked()){
-							type="food";
+							category=Item.FOOD;
 						}
 						else if(toys.isChecked()){
-							type="Toys";
+							category=Item.TOYS;
 						}
 						else if(clothing.isChecked()){
-							type="Clothing";
-						}
-						else{
-							type="";
+							category=Item.CLOTHING;
 						}
 							
-						DonateItem donate= new DonateItem(name, description, type, location);
+						DonateItem donate= new DonateItem(name, description, category, location);
 						if(WheresMyStuff.add(donate)){
 							Intent foundIntent = new Intent(DonateItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);

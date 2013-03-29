@@ -11,4 +11,6 @@
         <string name="lost_keepsake">Keepsake</string>
         <string name="lost_misc">Misc</string>
         <string name="lost_item_type">What type of item?</string>
+        <string name="lost_location">Location:</string>
+        <string name="found_date">When did you lose it?</string>
     </resources>

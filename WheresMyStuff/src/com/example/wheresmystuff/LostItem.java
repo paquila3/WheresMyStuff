@@ -1,12 +1,12 @@
 package com.example.wheresmystuff;
 
 public class LostItem extends Item{
-	private String contact, number, email, type;
+	private String contact, number, email;
 	//standard constructor
 
-	
-	public LostItem(String name, String description, String contact, String number, String email, String type) {
-		super(name, description,type);
+	//simplified, removed superfluous stuff.
+	public LostItem(String name, String description, int category, String location, long date, String contact, String number, String email) {
+		super(name, description,category,location, date);
 		this.contact=contact;
 		this.number=number;
 		this.email=email;
@@ -29,13 +29,5 @@ public class LostItem extends Item{
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 }

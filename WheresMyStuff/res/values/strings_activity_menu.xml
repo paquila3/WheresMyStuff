@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Found">Found</string>
-    <string name="Lost">Lost</string>
-    <string name="Donate">Donate</string>
+    <string name="Found">Add Found Item</string>
+    <string name="Lost">Add Lost Item</string>
+    <string name="Donate">Donate Item</string>
     <string name="Logout">Logout</string>
-    <string name="Admin">Admin</string>
+    <string name="Admin">Admin Menu</string>
+    <string name="Item_List">View Item List</string>
+    <string name="main_add_item">Add New Item</string>
+    <string name="main_other">Other Functions</string>
+    <string name="main_to_item_list">View List of Items</string>
+    <string name="main_user_profile">View User Profile</string>
     
 </resources>

@@ -10,4 +10,6 @@
         <string name="found_picture">Picture</string>
         <string name="found_misc">Misc</string>
         <string name="found_item_type">What type of item?</string>
+        <string name="found_location">Location:</string>
+        <string name="lost_date">When did you find it?</string>
     </resources>

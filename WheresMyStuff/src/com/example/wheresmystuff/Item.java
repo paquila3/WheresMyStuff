@@ -1,21 +1,21 @@
 package com.example.wheresmystuff;
 
 abstract class Item {
-	private String name, description, category;
+	private String name, description, location;
+	//changed category to an int and set up some constants to use for this.
+	private int category;
+	public static final int KEEPSAKE=0,HEIRLOOM=1, PICTURE=2, MISC=3, CLOTHING=4, FOOD=5, HEALTHCARE=6, TOYS=7;
 	private final long date; //milliseconds since January 1, 1970
-	private boolean resolved;
+	private boolean resolved=false;
+	
 	//super-constructor for all items.
-	
-	public Item(String name, String description){
-		this(name, description, "");
-	}
-	
-	public Item(String name, String description, String category){
+	//changed to include, mostly, everything.
+	public Item(String name, String description, int category, String location, long date){
 		this.name=name;
-		this.description=(description);
-		this.date=WheresMyStuff.currentTime.getTimeInMillis();
+		this.description=description;
+		this.date=date;
+		this.location=location;
 		this.category=category;
-		setResolved(false);
 	}
 	
 	public String getName() {
@@ -42,11 +42,11 @@ abstract class Item {
 		return date;
 	}
 
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 
@@ -56,6 +56,14 @@ abstract class Item {
 
 	public void setResolved(boolean resolved) {
 		this.resolved = resolved;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 }

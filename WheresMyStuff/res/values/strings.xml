@@ -23,5 +23,6 @@
     <string name="found_items_list">List of found items</string>
     <string name="title_activity_donate_item_list">DonateItemListActivity</string>
     <string name="donate_item_list">List of donated items</string>
+    <string name="DNE">The functionality of thie does not exist yet.</string>
 
 </resources>

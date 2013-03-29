@@ -2,49 +2,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MenuActivity" >
-
-    <Button
-        android:id="@+id/logout_button"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/Logout" />
-
-    <Button
-        android:id="@+id/lost_button"
-        style="@style/AppBaseTheme"
-        android:layout_width="250dp"
-        android:layout_height="145dp"
-        android:layout_below="@+id/logout_button"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Lost" />
-
-    <Button
-        android:id="@+id/Donate_button"
-        android:layout_width="250dp"
-        android:layout_height="145dp"
-        android:layout_below="@+id/lost_button"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Donate" />
-
-    <Button
-        android:id="@+id/Found_button"
-        android:layout_width="250dp"
-        android:layout_height="145dp"
-        android:layout_below="@+id/Donate_button"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Found" />
 
     <Button
         android:id="@+id/admin_button"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/Admin" />
+
+    <Button
+        android:id="@+id/logout_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Logout" />
+
+    <TextView
+        android:id="@+id/main_add_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/Admin" />
+        android:text="@string/main_add_item"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/Donate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lost_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Donate" />
+
+    <Button
+        android:id="@+id/Found_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Donate_button"
+        android:layout_alignParentRight="true"
+        android:text="@string/Found" />
+
+    <Button
+        android:id="@+id/lost_button"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/main_add_item_text"
+        android:text="@string/Lost" />
+
+    <TextView
+        android:id="@+id/other_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/main_add_item_text"
+        android:layout_below="@+id/Donate_button"
+        android:text="@string/main_other"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/main_to_item_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/other_text"
+        android:text="@string/main_to_item_list" />
+
+    <Button
+        android:id="@+id/main_user_profile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/main_to_item_list"
+        android:layout_below="@+id/main_to_item_list"
+        android:text="@string/main_user_profile" />
 
 </RelativeLayout>

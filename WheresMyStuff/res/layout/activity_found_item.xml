@@ -8,16 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FoundItemActivity" >
 
-    <TextView
-        android:id="@+id/found_title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/found_item_name"
-        android:layout_below="@+id/found_description_text"
-        android:layout_marginTop="34dp"
-        android:text="@string/found_name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/found_name"
         android:layout_width="wrap_content"
@@ -59,54 +49,6 @@
         android:layout_alignParentTop="true"
         android:text="@string/DigitalClock" />
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="32dp"
-        android:text="@string/submit" />
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/submit"
-        android:layout_alignBottom="@+id/submit"
-        android:layout_alignLeft="@+id/found_location_text"
-        android:text="@string/back" />
-
-    <TextView
-        android:id="@+id/found_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/found_description_text"
-        android:layout_below="@+id/found_title_text"
-        android:layout_marginTop="17dp"
-        android:text="@string/found_description"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ImageButton
-        android:id="@+id/found_item_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/submit"
-        android:layout_marginBottom="37dp"
-        android:layout_toLeftOf="@+id/submit"
-        android:contentDescription="@string/found_image"
-        android:src="@android:drawable/ic_menu_camera" />
-
-    <TextView
-        android:id="@+id/found_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/found_item_name"
-        android:layout_below="@+id/found_description"
-        android:layout_marginTop="18dp"
-        android:text="@string/found_item_type"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <RadioButton
         android:id="@+id/found_heirloom"
         android:layout_width="wrap_content"
@@ -128,25 +70,95 @@
         android:id="@+id/found_keepsake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/found_type"
-        android:layout_below="@+id/found_type"
-        android:text="@string/found_keepsake" />
-
-    <TextView
-        android:id="@+id/found_location_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/found_item_image"
         android:layout_alignLeft="@+id/found_type"
-        android:text="@string/found_upload_image"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_below="@+id/found_type"
+        android:layout_marginLeft="16dp"
+        android:text="@string/found_keepsake" />
 
     <RadioButton
         android:id="@+id/found_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/found_misc"
-        android:layout_alignLeft="@+id/found_item_image"
+        android:layout_toRightOf="@+id/found_type"
         android:text="@string/found_picture" />
+
+    <TextView
+        android:id="@+id/found_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_description_text"
+        android:layout_below="@+id/found_description_text"
+        android:text="@string/found_name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/found_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_title_text"
+        android:layout_below="@+id/found_name"
+        android:text="@string/found_description"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/found_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_item_name"
+        android:layout_below="@+id/found_description"
+        android:text="@string/found_location"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/found_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/found_location_text"
+        android:layout_toRightOf="@+id/found_location_text"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/back" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/submit" />
+
+    <TextView
+        android:id="@+id/found_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_type"
+        android:layout_below="@+id/found_heirloom"
+        android:text="@string/found_date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <DatePicker
+        android:id="@+id/found_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/found_date_text"
+        android:layout_alignBottom="@+id/found_date_text"
+        android:layout_toRightOf="@+id/found_date_text" />
+
+    <TextView
+        android:id="@+id/found_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_location_text"
+        android:layout_below="@+id/found_location"
+        android:text="@string/found_item_type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

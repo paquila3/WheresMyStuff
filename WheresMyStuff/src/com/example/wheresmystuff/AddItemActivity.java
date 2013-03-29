@@ -1,11 +1,14 @@
 package com.example.wheresmystuff;
 
+import java.util.Date;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -32,24 +35,28 @@ public class AddItemActivity extends Activity {
 						String phoneNumber=phoneText.getText().toString();
 						EditText emailText=(EditText)findViewById(R.id.lost_email);
 						String email=emailText.getText().toString();
+						EditText locationText=(EditText)findViewById(R.id.lost_location);
+						String location= locationText.getText().toString();
 						RadioButton keepsake= (RadioButton)findViewById(R.id.lost_keepsake);
 						RadioButton heirloom= (RadioButton)findViewById(R.id.lost_heirloom);
 						RadioButton picture= (RadioButton)findViewById(R.id.lost_picture);
-						RadioButton misc= (RadioButton)findViewById(R.id.lost_misc);
-						String type="";
+						//set default to Misc, and then only check 3 things. also changed name
+						// to keep standardd with rest of files.
+						int category=Item.MISC;
 						if (keepsake.isChecked()){
-							type="Keepsake";
+							category=Item.KEEPSAKE;
 						}
 						else if(heirloom.isChecked()){
-							type="Heirloom";
+							category=Item.HEIRLOOM;
 						}
 						else if(picture.isChecked()){
-							type="Picture";
+							category=Item.PICTURE;
 						}
-						else if(misc.isChecked()){
-							type="Misc";
-						}
-						LostItem lost= new LostItem(name, description, contact , phoneNumber, email, type);
+						DatePicker datePicker= (DatePicker)findViewById(R.id.found_date);
+						@SuppressWarnings("deprecation")
+						Date d= new Date(datePicker.getYear()-1900, datePicker.getMonth(), datePicker.getDayOfMonth());;
+						long date= d.getTime();
+						LostItem lost= new LostItem(name, description, category, location, date, contact , phoneNumber, email);
 						if(WheresMyStuff.add(lost)){
 							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							lostIntent.putExtra("filter", "lost");

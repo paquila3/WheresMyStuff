@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Category">Category</string>
+    <string name="Category">Category:</string>
     <string name="All">All</string>
     <string name="Today">Today</string>
     <string name="Seven_Days">7 Days</string>
@@ -11,7 +11,11 @@
     <string name="list_heirloom">Heirloom</string>
     <string name="list_picture">Picture</string>
     <string name="list_misc">Misc</string>
-    <string name="list_date">Date</string>
-    <string name="list_itemList">Item List</string>
+    <string name="list_date">Date:</string>
+    <string name="list_itemList">Item List:</string>
+    <string name="list_status">Status:</string>
+    <string name="list_type_text">Type:</string>
+    <string name="list_found">Found</string>
+    <string name="list_lost">Lost</string>
     
 </resources>

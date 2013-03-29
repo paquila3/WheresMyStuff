@@ -27,7 +27,7 @@ public class AdminActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						EditText edit =  (EditText) findViewById(R.id.editText1);
+						EditText edit =  (EditText) findViewById(R.id.user_email);
 						String email=edit.getText().toString();
 						String password=WheresMyStuff.getPassword(email);
 						User clone = WheresMyStuff.createClone(email,password);
@@ -42,7 +42,7 @@ public class AdminActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						EditText edit = (EditText) findViewById(R.id.editText1);
+						EditText edit = (EditText) findViewById(R.id.user_email);
 						String email = edit.getText().toString();
 						User toDelete = null;
 						for (User u : WheresMyStuff.getUserList()) {
@@ -63,7 +63,7 @@ public class AdminActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						EditText edit =  (EditText) findViewById(R.id.editText1);
+						EditText edit =  (EditText) findViewById(R.id.user_email);
 						String email=edit.getText().toString();
 						String password=WheresMyStuff.getPassword(email);
 						User clone = WheresMyStuff.createClone(email,password);

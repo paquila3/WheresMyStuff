@@ -1,6 +1,7 @@
 package com.example.wheresmystuff;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.os.Bundle;
 import android.app.ListActivity;
@@ -9,17 +10,17 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
+import android.widget.DatePicker;
 
 public class ItemListActivity extends ListActivity {
 
-	private static final long MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
-	
-    ArrayList<String> listItems = new ArrayList<String>();
+	ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    String filterCategory = "";
-    int filterDate = 0; //0 = all time; 1 = today; 2 = last 7 days; 3 = last 30 days
-    int filterLostFound = 0; //0 = both; 1 = lost only; 2 = found only
+    //using a boolean array now because booleans work better for checkboxes
+    boolean[] filterCategory = {true,true,true,true}; //keepsake, heirloom, picture, misc
+    @SuppressWarnings("deprecation")
+	long filterDate = (new Date(0,0,1)).getTime(); //changed to a long, initialized at Jan 1, 1900;
+    int filterLostFound = 0; //0 = neither; 1 = lost only; 2 = found only 3=both. Changed for math reasons.
     boolean filterStatus = false; //false = open; true = resolved
 
 	@Override
@@ -30,8 +31,8 @@ public class ItemListActivity extends ListActivity {
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
 		setListAdapter(adapter);
 		
-		((RadioButton)findViewById(R.id.radioAllCategory)).setChecked(true);
-		((RadioButton)findViewById(R.id.radioAll)).setChecked(true);
+		((CheckBox)findViewById(R.id.list_lost)).setChecked(true);
+		((CheckBox)findViewById(R.id.list_found)).setChecked(true);
 		
 		populateList();
 		
@@ -39,160 +40,59 @@ public class ItemListActivity extends ListActivity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						RadioButton rbKeepsake = (RadioButton)findViewById(R.id.radioKeepsake);
-						RadioButton rbHeirloom = (RadioButton)findViewById(R.id.radioHeirloom);
-						RadioButton rbPicture = (RadioButton)findViewById(R.id.radioPicture);
-						RadioButton rbMisc = (RadioButton)findViewById(R.id.radioMisc);
-						RadioButton rbToday = (RadioButton)findViewById(R.id.radioToday);
-						RadioButton rbSevenDays = (RadioButton)findViewById(R.id.radioSevenDays);
-						RadioButton rbThirtyDays = (RadioButton)findViewById(R.id.radioThirtyDays);
-						CheckBox cbResolved = (CheckBox)findViewById(R.id.checkBoxResolved);
+						//changed all of them to checkboxes, removed the ones i deleted, added the date getter.
+						CheckBox cbKeepsake = (CheckBox)findViewById(R.id.checkKeepsake);
+						CheckBox cbHeirloom = (CheckBox)findViewById(R.id.checkHeirloom);
+						CheckBox cbPicture = (CheckBox)findViewById(R.id.checkPicture);
+						CheckBox cbMisc = (CheckBox)findViewById(R.id.checkMisc);
+						CheckBox cbResolved = (CheckBox)findViewById(R.id.checkResolved);
+						CheckBox cbLost= (CheckBox)findViewById(R.id.list_lost);
+						CheckBox cbFound= (CheckBox)findViewById(R.id.list_found);
+						//redid the filtercategory in terms of the booleans
+						if (cbKeepsake.isChecked()) {
+							filterCategory[0]=true;
+						}
+						else{
+							filterCategory[0]=false;
+						}
+						if (cbHeirloom.isChecked()) {
+							filterCategory[1]=true;
+						}
+						else{
+							filterCategory[1]=false;
+						}
+						if (cbPicture.isChecked()) {
+							filterCategory[2]=true;
+						}
+						else{
+							filterCategory[2]=false;
+						}
+						if (cbMisc.isChecked()) {
+							filterCategory[3]=true;
+						}
+						else{
+							filterCategory[3]=false;
+						}
 						
-						filterCategory = "";
-						if (rbKeepsake.isChecked()) {
-							filterCategory = "Keepsake";
-						} else if (rbHeirloom.isChecked()) {
-							filterCategory = "Heirloom";
-						} else if (rbPicture.isChecked()) {
-							filterCategory = "Picture";
-						} else if (rbMisc.isChecked()) {
-							filterCategory = "Misc";
+						//math is a beautiful thing, isn't it?
+						filterLostFound=0;
+						if (cbLost.isChecked()){
+							filterLostFound+=1;
 						}
-						filterDate = 0;
-						if (rbToday.isChecked()) {
-							filterDate = 1;
-						} else if (rbSevenDays.isChecked()) {
-							filterDate = 2;
-						} else if (rbThirtyDays.isChecked()) {
-							filterDate = 3;
+						if (cbFound.isChecked()){
+							filterLostFound+=2;
 						}
+						
+						DatePicker datePicker= (DatePicker)findViewById(R.id.list_date_picker);
+						@SuppressWarnings("deprecation")
+						Date d= new Date(datePicker.getYear()-1900, datePicker.getMonth(), datePicker.getDayOfMonth());
+						filterDate = d.getTime();
+						
 						filterStatus = cbResolved.isChecked();
 						listItems.clear();
 						adapter.notifyDataSetChanged();
 						populateList();
 					}
-				});
-//		
-		findViewById(R.id.radioKeepsake).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioHeirloom)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioPicture)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioMisc)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAllCategory)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioHeirloom).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioKeepsake)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioPicture)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioMisc)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAllCategory)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioPicture).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioHeirloom)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioMisc)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioKeepsake)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAllCategory)).setChecked(false);
-						
-					}	
-				});
-//		
-		findViewById(R.id.radioMisc).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioHeirloom)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioPicture)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioKeepsake)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAllCategory)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioAllCategory).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioHeirloom)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioPicture)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioMisc)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioKeepsake)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioAll).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioToday)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioSevenDays)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioThirtyDays)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioToday).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioAll)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioSevenDays)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioThirtyDays)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioSevenDays).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioToday)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAll)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioThirtyDays)).setChecked(false);
-						
-					}	
-				});
-		
-		findViewById(R.id.radioThirtyDays).setOnClickListener(
-				new View.OnClickListener() {
-					
-					@Override
-					public void onClick(View v) {
-
-						((RadioButton)findViewById(R.id.radioToday)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioSevenDays)).setChecked(false);
-						((RadioButton)findViewById(R.id.radioAll)).setChecked(false);
-						
-					}	
 				});
 		findViewById(R.id.back).setOnClickListener(
 				new View.OnClickListener() {
@@ -214,39 +114,21 @@ public class ItemListActivity extends ListActivity {
 			for (Item i : u.getItemList())
 			{
 				boolean toAdd = true;
+				//fixed filgters based on new filter methods
+				if (filterLostFound ==0){
+					toAdd= false;
+				}
 				if (filterLostFound == 1 && !(i instanceof LostItem)) {
 					toAdd = false;
 				}
 				if (filterLostFound == 2 && !(i instanceof FoundItem)) {
 					toAdd = false;
 				}
-				if (!filterCategory.equals("")) {
-					if (!(i.getCategory().equals(filterCategory))) {
-						toAdd = false;
-					}
+				if (!filterCategory[i.getCategory()]){
+					toAdd= false;
 				}
-				if (filterDate != 0) {
-					if (i.getDate() == 0) {
-						toAdd = false;
-					} else {
-						switch (filterDate) {
-							case 1:
-								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY) {
-									toAdd = false;
-								}
-								break;
-							case 2:
-								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 7) {
-									toAdd = false;
-								}
-								break;
-							case 3:
-								if (WheresMyStuff.currentTime.getTimeInMillis() - i.getDate() > MILLIS_IN_DAY * 30) {
-									toAdd = false;
-								}
-								break;
-						}
-					}
+				if (i.getDate()<filterDate){
+					toAdd = false;
 				}
 				if (i.isResolved() != filterStatus) {
 					toAdd = false;
