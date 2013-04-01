@@ -9,12 +9,12 @@
         android:targetSdkVersion="17" />
 
     <application
-        android:name="com.example.wheresmystuff.WheresMyStuff"
+        android:name="com.example.wheresmystuff.presenter.WheresMyStuff"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.wheresmystuff.LoginActivity"
+            android:name="com.example.wheresmystuff.view.LoginActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
             <intent-filter>
@@ -24,23 +24,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.MenuActivity"
+            android:name="com.example.wheresmystuff.view.MenuActivity"
             android:label="@string/title_activity_menu" >
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.FoundItemActivity"
+            android:name="com.example.wheresmystuff.view.FoundItemActivity"
             android:label="@string/title_activity_found_item" >
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.AddItemActivity"
+            android:name="com.example.wheresmystuff.view.AddItemActivity"
             android:label="@string/title_activity_add_item" >
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.ItemListActivity"
+            android:name="com.example.wheresmystuff.view.ItemListActivity"
             android:label="@string/title_activity_item_list" >
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.AdminActivity"
+            android:name="com.example.wheresmystuff.view.AdminActivity"
             android:label="@string/title_activity_admin" >
         </activity>
         <activity

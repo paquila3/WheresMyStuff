@@ -1,6 +1,6 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.model;
 
-abstract class Item {
+public abstract class Item {
 	private String name, description, location;
 	//changed category to an int and set up some constants to use for this.
 	private int category;

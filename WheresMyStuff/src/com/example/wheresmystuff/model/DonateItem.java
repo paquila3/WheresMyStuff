@@ -1,4 +1,6 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.model;
+
+import com.example.wheresmystuff.presenter.WheresMyStuff;
 
 public class DonateItem extends Item{
 	//standard constructor

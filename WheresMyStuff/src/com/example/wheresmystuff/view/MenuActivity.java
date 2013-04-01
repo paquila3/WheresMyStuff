@@ -1,5 +1,8 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.view;
 
+
+import com.example.wheresmystuff.R;
+import com.example.wheresmystuff.presenter.*;
 
 import android.os.Bundle;
 import android.app.Activity;

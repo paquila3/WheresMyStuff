@@ -1,6 +1,10 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.view;
 
 import java.util.Date;
+
+import com.example.wheresmystuff.R;
+import com.example.wheresmystuff.model.*;
+import com.example.wheresmystuff.presenter.*;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -69,7 +73,7 @@ public class AddItemActivity extends Activity {
 						Date d= new Date(year-1900, month-1, day);;
 						long date= d.getTime();
 						LostItem lost= new LostItem(name, description, category, location, date, contact , phoneNumber, email);
-						if(WheresMyStuff.add(lost)){
+						if(WheresMyStuff.addItem(lost)){
 							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							lostIntent.putExtra("filter", "lost");
 							startActivity(lostIntent);

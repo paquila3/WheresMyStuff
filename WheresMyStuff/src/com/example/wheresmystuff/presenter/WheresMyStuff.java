@@ -1,9 +1,12 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.presenter;
 
 import java.util.Calendar;
 
 import android.app.Application;
 import java.util.ArrayList;
+
+import com.example.wheresmystuff.model.Item;
+import com.example.wheresmystuff.model.User;
 
 public class WheresMyStuff extends Application {
 
@@ -63,8 +66,8 @@ public class WheresMyStuff extends Application {
 		return "";
 	}
 	
-	static boolean add(Item item){
-		return getActiveUser().add(item);
+	public static boolean addItem(Item item){
+		return getActiveUser().addItem(item);
 	}
 	
 	public static ArrayList<User> getUserList() {

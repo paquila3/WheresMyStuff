@@ -1,6 +1,10 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.view;
 
 import java.util.Date;
+
+import com.example.wheresmystuff.R;
+import com.example.wheresmystuff.model.*;
+import com.example.wheresmystuff.presenter.*;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -63,7 +67,7 @@ public class FoundItemActivity extends Activity {
 						Date d= new Date(year-1900, month-1, day);;
 						long date= d.getTime();
 						Item found= new FoundItem(name, description, category, location, date);
-						if(WheresMyStuff.add(found)){
+						if(WheresMyStuff.addItem(found)){
 
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
 

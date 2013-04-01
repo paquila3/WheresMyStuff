@@ -1,4 +1,8 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.view;
+import com.example.wheresmystuff.R;
+import com.example.wheresmystuff.model.*;
+import com.example.wheresmystuff.presenter.*;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;

@@ -1,4 +1,8 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.view;
+
+import com.example.wheresmystuff.R;
+import com.example.wheresmystuff.model.*;
+import com.example.wheresmystuff.presenter.*;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -49,7 +53,7 @@ public class DonateItemActivity extends Activity {
 						}
 							
 						DonateItem donate= new DonateItem(name, description, category, location);
-						if(WheresMyStuff.add(donate)){
+						if(WheresMyStuff.addItem(donate)){
 							Intent foundIntent = new Intent(DonateItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);
 							finish();

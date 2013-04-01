@@ -1,6 +1,7 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.model;
 
 import java.util.ArrayList;
+
 
 public class User {
 	private String username, password, user_android_id;
@@ -20,30 +21,9 @@ public class User {
 		locked = false;
 	}
 	
-	boolean add(Item item){
+	public boolean addItem(Item item){
 		try{
 		itemList.add(item);
-		}
-		catch(Exception e){
-			return false;
-		}
-		return true;
-	}
-	
-
-	boolean addFound(Item item){
-		try{
-		itemList.add(item);
-		}
-		catch(Exception e){
-			return false;
-		}
-		return true;
-	}
-	
-	boolean addDonate(Item item){
-		try{
-		donateItemList.add(item);
 		}
 		catch(Exception e){
 			return false;

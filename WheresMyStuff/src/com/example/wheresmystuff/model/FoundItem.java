@@ -1,4 +1,5 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.model;
+
 
 public class FoundItem extends Item{
 	//Constructor for if it has an image

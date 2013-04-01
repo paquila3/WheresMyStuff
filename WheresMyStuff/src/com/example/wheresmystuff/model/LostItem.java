@@ -1,4 +1,5 @@
-package com.example.wheresmystuff;
+package com.example.wheresmystuff.model;
+
 
 public class LostItem extends Item{
 	private String contact, number, email;
