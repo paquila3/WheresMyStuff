@@ -25,5 +25,7 @@
     <string name="donate_item_list">List of donated items</string>
     <string name="DNE">The functionality of thie does not exist yet.</string>
     <string name="date_format">dd/mm/yyyy</string>
+    <string name="title_activity_donate_item">DonateItemActivity</string>
+    <string name="title_activity_search_menu">SearchMenu</string>
 
 </resources>
