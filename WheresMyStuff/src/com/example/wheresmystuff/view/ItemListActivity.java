@@ -133,27 +133,7 @@ public class ItemListActivity extends ListActivity {
 		{
 			for (Item i : u.getItemList())
 			{
-				boolean toAdd = true;
-				//fixed filgters based on new filter methods
-				if (filterLostFound ==0){
-					toAdd= false;
-				}
-				if (filterLostFound == 1 && !(i instanceof LostItem)) {
-					toAdd = false;
-				}
-				if (filterLostFound == 2 && !(i instanceof FoundItem)) {
-					toAdd = false;
-				}
-				if (!filterCategory[i.getCategory()]){
-					toAdd= false;
-				}
-				if (i.getDate()<filterDate){
-					toAdd = false;
-				}
-				if (i.isResolved() != filterStatus) {
-					toAdd = false;
-				}
-				if (toAdd) {
+				if (WheresMyStuff.filter(i, filterCategory, filterLostFound, filterDate, filterStatus)) {
 					addItem(i.toString());
 				}
 			}

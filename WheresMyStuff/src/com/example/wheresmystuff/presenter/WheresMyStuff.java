@@ -5,7 +5,9 @@ import java.util.Calendar;
 import android.app.Application;
 import java.util.ArrayList;
 
+import com.example.wheresmystuff.model.FoundItem;
 import com.example.wheresmystuff.model.Item;
+import com.example.wheresmystuff.model.LostItem;
 import com.example.wheresmystuff.model.User;
 
 public class WheresMyStuff extends Application {
@@ -84,5 +86,30 @@ public class WheresMyStuff extends Application {
 
 	public static void setActiveUser(User user) {
 		activeUser = user;
+	}
+	
+	public static boolean filter(Item i, boolean[] filterCategory, int filterLostFound, long filterDate, boolean filterStatus){
+
+		boolean toAdd = true;
+		//fixed filgters based on new filter methods
+		if (filterLostFound ==0){
+			toAdd= false;
+		}
+		if (filterLostFound == 1 && !(i instanceof LostItem)) {
+			toAdd = false;
+		}
+		if (filterLostFound == 2 && !(i instanceof FoundItem)) {
+			toAdd = false;
+		}
+		if (!filterCategory[i.getCategory()]){
+			toAdd= false;
+		}
+		if (i.getDate()<filterDate){
+			toAdd = false;
+		}
+		if (i.isResolved() != filterStatus) {
+			toAdd = false;
+		}
+		return (toAdd);
 	}
 }
