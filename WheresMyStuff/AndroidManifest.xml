@@ -59,6 +59,10 @@
             android:name="com.example.wheresmystuff.view.SearchMenu"
             android:label="@string/title_activity_search_menu" >
         </activity>
+        <activity
+            android:name="com.example.wheresmystuff.UserProfile"
+            android:label="@string/title_activity_user_profile" >
+        </activity>
     </application>
 
 </manifest>

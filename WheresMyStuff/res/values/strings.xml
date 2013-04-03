@@ -27,5 +27,6 @@
     <string name="date_format">dd/mm/yyyy</string>
     <string name="title_activity_donate_item">DonateItemActivity</string>
     <string name="title_activity_search_menu">SearchMenu</string>
+    <string name="title_activity_user_profile">UserProfile</string>
 
 </resources>
