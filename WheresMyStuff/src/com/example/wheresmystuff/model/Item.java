@@ -10,7 +10,7 @@ public abstract class Item {
 	private String name, description, location;
 	//changed category to an int and set up some constants to use for this.
 	/** The category. */
-	private int category;
+	private int category, userID, ID;
 	
 	/** The Constant TOYS. */
 	public static final int KEEPSAKE=0,HEIRLOOM=1, PICTURE=2, MISC=3, CLOTHING=4, FOOD=5, HEALTHCARE=6, TOYS=7;
@@ -32,12 +32,14 @@ public abstract class Item {
 	 * @param location the location
 	 * @param date the date
 	 */
-	public Item(String name, String description, int category, String location, long date){
+	public Item(String name, String description, int category, String location, long date, int userID, int ID){
 		this.name=name;
 		this.description=description;
 		this.date=date;
 		this.location=location;
 		this.category=category;
+		this.userID=userID;
+		this.setID(ID);
 	}
 	
 	/**
@@ -144,6 +146,22 @@ public abstract class Item {
 	 */
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
 	}
 
 }

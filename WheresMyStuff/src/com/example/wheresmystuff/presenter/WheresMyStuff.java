@@ -22,11 +22,15 @@ public class WheresMyStuff extends Application {
 	/** The user list. */
 	private static ArrayList<User> userList = new ArrayList<User>();
 	
+	private static ArrayList<Item> itemList = new ArrayList<Item>();
+	
 	/** The active user. */
 	private static User activeUser;
 	
 	/** The init. */
 	private static boolean init;
+	
+	private static ItemDatabase items;
 	
 	/**
 	 * Initialize.
@@ -47,7 +51,7 @@ public class WheresMyStuff extends Application {
 	 * @return the user
 	 */
 	public static User createUser(String email, String password) {
-		User newUser=new User(email, password);
+		User newUser=new User(email, password, items.getUserCount());
 		userList.add(newUser);
 		return newUser;
 	}
@@ -60,7 +64,7 @@ public class WheresMyStuff extends Application {
 	 * @return the user
 	 */
 	public static User createClone(String email, String password) {//cory
-		User newUser=new User(email, password);
+		User newUser=new User(email, password, items.getUserCount());
 		return newUser;
 	}
 	
@@ -198,5 +202,13 @@ public class WheresMyStuff extends Application {
 			toAdd = false;
 		}
 		return (toAdd);
+	}
+
+	public static ArrayList<Item> getItemList() {
+		return itemList;
+	}
+
+	public static void setItemList(ArrayList<Item> itemList) {
+		WheresMyStuff.itemList = itemList;
 	}
 }

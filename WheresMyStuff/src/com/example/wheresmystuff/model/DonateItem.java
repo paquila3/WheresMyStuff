@@ -17,8 +17,14 @@ public class DonateItem extends Item{
 	 * @param category the category
 	 * @param location the location
 	 */
-	public DonateItem(String name, String description, int category, String location) {
-		super(name, description, category, location, WheresMyStuff.currentTime.getTimeInMillis());
+	public DonateItem(String name, String description, int category, String location, int userID, int ID) {
+		super(name, description, category, location, WheresMyStuff.currentTime.getTimeInMillis(), userID, ID);
+	}
+
+	public DonateItem(String name, String description, int category, String location, long date, int userID, int ID) {
+		super(name, description, category, location, date, userID, ID);
+
+		// TODO Auto-generated constructor stub
 	}
 
 }

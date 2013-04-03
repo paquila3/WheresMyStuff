@@ -73,7 +73,7 @@ public class FoundItemActivity extends Activity {
 						@SuppressWarnings("deprecation")
 						Date d= new Date(year-1900, month-1, day);;
 						long date= d.getTime();
-						Item found= new FoundItem(name, description, category, location, date);
+						Item found= new FoundItem(name, description, category, location, date, WheresMyStuff.getActiveUser().getUserID(), WheresMyStuff.getItemList().size());
 						if(WheresMyStuff.addItem(found)){
 
 							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);

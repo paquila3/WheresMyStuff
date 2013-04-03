@@ -15,6 +15,8 @@ public class User {
 	/** The locked. */
 	private boolean admin, locked;
 	
+	
+	private int userID;
 	/** The item list. */
 	private ArrayList<Item> itemList= new ArrayList<Item>();
 	
@@ -24,8 +26,9 @@ public class User {
 	 * @param username the username
 	 * @param password the password
 	 */
-	public User(String username, String password) {
-		this(username, password, false);
+	public User(String username, String password, int userID) {
+		this(username, password, false, userID);
+		
 	}
 	
 	/**
@@ -35,11 +38,12 @@ public class User {
 	 * @param password the password
 	 * @param admin the admin
 	 */
-	public User(String username, String password, boolean admin) {
+	public User(String username, String password, boolean admin, int userID) {
 		this.username = username;
 		this.password = password;
 		this.admin = admin;
 		locked = false;
+		this.userID = userID;
 	}
 	
 	/**
@@ -156,5 +160,13 @@ public class User {
 	 */
 	public void setUser_android_id(String user_android_id) {
 		this.user_android_id = user_android_id;
+	}
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 }

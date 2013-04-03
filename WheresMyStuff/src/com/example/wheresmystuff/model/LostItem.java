@@ -24,8 +24,8 @@ public class LostItem extends Item{
 	 * @param number the number
 	 * @param email the email
 	 */
-	public LostItem(String name, String description, int category, String location, long date, String contact, String number, String email) {
-		super(name, description,category,location, date);
+	public LostItem(String name, String description, int category, String location, long date, String contact, String number, String email, int userID, int ID) {
+		super(name, description,category,location, date, userID, ID);
 		this.contact=contact;
 		this.number=number;
 		this.email=email;

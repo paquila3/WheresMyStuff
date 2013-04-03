@@ -79,7 +79,7 @@ public class AddItemActivity extends Activity {
 						@SuppressWarnings("deprecation")
 						Date d= new Date(year-1900, month-1, day);;
 						long date= d.getTime();
-						LostItem lost= new LostItem(name, description, category, location, date, contact , phoneNumber, email);
+						LostItem lost= new LostItem(name, description, category, location, date, contact , phoneNumber, email, WheresMyStuff.getActiveUser().getUserID(), WheresMyStuff.getItemList().size());
 						if(WheresMyStuff.addItem(lost)){
 							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
 							lostIntent.putExtra("filter", "lost");

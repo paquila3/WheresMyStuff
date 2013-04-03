@@ -59,7 +59,7 @@ public class DonateItemActivity extends Activity {
 							category=Item.CLOTHING;
 						}
 							
-						DonateItem donate= new DonateItem(name, description, category, location);
+						DonateItem donate= new DonateItem(name, description, category, location, WheresMyStuff.getActiveUser().getUserID(), WheresMyStuff.getItemList().size());
 						if(WheresMyStuff.addItem(donate)){
 							Intent foundIntent = new Intent(DonateItemActivity.this, ItemListActivity.class);
 							startActivity(foundIntent);
