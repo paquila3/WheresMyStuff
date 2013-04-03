@@ -1,9 +1,6 @@
 package com.example.wheresmystuff.view;
 
 import com.example.wheresmystuff.R;
-import com.example.wheresmystuff.R.layout;
-import com.example.wheresmystuff.R.menu;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
