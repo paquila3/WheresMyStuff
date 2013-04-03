@@ -1,7 +1,9 @@
 package com.example.wheresmystuff.presenter;
 
 import java.util.Calendar;
+import java.util.Locale;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import java.util.ArrayList;
 
@@ -86,6 +88,27 @@ public class WheresMyStuff extends Application {
 
 	public static void setActiveUser(User user) {
 		activeUser = user;
+	}
+	
+	@SuppressLint("DefaultLocale")
+	public static boolean search(Item i, String name, String description) {
+		int required = 0, have = 0;
+		if (name != "") {
+			required++;
+		}
+		if (description != "") {
+			required++;
+		}
+		if (i.getName().toLowerCase(Locale.ENGLISH).equals(name.toLowerCase(Locale.ENGLISH)) && name != "") {
+			have++;
+		}
+		if (i.getDescription().toLowerCase(Locale.ENGLISH).equals(description.toLowerCase(Locale.ENGLISH)) && description != "") {
+			have++;
+		}
+		if (have >= required && required > 0) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static boolean filter(Item i, boolean[] filterCategory, int filterLostFound, long filterDate, boolean filterStatus){
