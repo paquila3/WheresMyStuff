@@ -30,7 +30,7 @@ public class WheresMyStuff extends Application {
 	/** The init. */
 	private static boolean init;
 	
-	private static ItemDatabase items;
+	private static DatabaseHelper Database;
 	
 	/**
 	 * Initialize.
@@ -40,6 +40,8 @@ public class WheresMyStuff extends Application {
 			return;
 		User adm = WheresMyStuff.createUser("a@m","aaaa");
 		WheresMyStuff.promoteUser(adm);//Creates default admin
+		userList = (ArrayList<User>) Database.getAllUser();
+		itemList = (ArrayList<Item>) Database.getAllItem();
 		init = true;
 	}
 	
@@ -51,7 +53,7 @@ public class WheresMyStuff extends Application {
 	 * @return the user
 	 */
 	public static User createUser(String email, String password) {
-		User newUser=new User(email, password, items.getUserCount());
+		User newUser=new User(email, password, Database.getUserCount());
 		userList.add(newUser);
 		return newUser;
 	}
@@ -64,7 +66,7 @@ public class WheresMyStuff extends Application {
 	 * @return the user
 	 */
 	public static User createClone(String email, String password) {//cory
-		User newUser=new User(email, password, items.getUserCount());
+		User newUser=new User(email, password, Database.getUserCount());
 		return newUser;
 	}
 	

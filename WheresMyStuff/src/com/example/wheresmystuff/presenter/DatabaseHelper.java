@@ -15,7 +15,7 @@ import com.example.wheresmystuff.model.*;
 /**
  * The Class ItemDatabase.
  */
-public class ItemDatabase extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
 	  /** The Constant TABLE_NAME_1. */
   	public static final String TABLE_NAME_1 = "items";
@@ -100,7 +100,7 @@ public class ItemDatabase extends SQLiteOpenHelper {
 	 *
 	 * @param context the context
 	 */
-	public ItemDatabase(Context context){
+	public DatabaseHelper(Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
@@ -118,7 +118,7 @@ public class ItemDatabase extends SQLiteOpenHelper {
 	 */
 	@Override
 	public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
-	    Log.w(ItemDatabase.class.getName(),
+	    Log.w(DatabaseHelper.class.getName(),
 	            "Upgrading database from version " + oldVersion + " to "
 	                + newVersion + ", which will destroy all old data");
 	        database.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_1);
