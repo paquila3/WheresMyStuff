@@ -17,17 +17,34 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ItemListActivity.
+ */
 public class ItemListActivity extends ListActivity {
 
+	/** The list items. */
 	ArrayList<String> listItems = new ArrayList<String>();
+    
+    /** The adapter. */
     ArrayAdapter<String> adapter;
     //using a boolean array now because booleans work better for checkboxes
+    /** The filter category. */
     boolean[] filterCategory = {true,true,true,true}; //keepsake, heirloom, picture, misc
+    
+    /** The filter date. */
     @SuppressWarnings("deprecation")
 	long filterDate = (new Date(0,0,0)).getTime(); //changed to a long, initialized at Jan 1, 1900;
+    
+    /** The filter lost found. */
     int filterLostFound = 3; //0 = neither; 1 = lost only; 2 = found only 3=both. Changed for math reasons.
+	
+	/** The filter status. */
 	boolean filterStatus = false; //false = open; true = resolved
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -128,6 +145,9 @@ public class ItemListActivity extends ListActivity {
 				});
 	}
 	
+	/**
+	 * Populate list.
+	 */
 	protected void populateList() {
 		for (User u : WheresMyStuff.getUserList())
 		{
@@ -140,12 +160,20 @@ public class ItemListActivity extends ListActivity {
 		}
 	}
 	
+	/**
+	 * Adds the item.
+	 *
+	 * @param s the s
+	 */
 	protected void addItem(String s)
 	{
 		listItems.add(s);
         adapter.notifyDataSetChanged();
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -154,18 +182,38 @@ public class ItemListActivity extends ListActivity {
 	}
 
 
+    /**
+     * Sets the filter category.
+     *
+     * @param filterCategory the new filter category
+     */
     public void setFilterCategory(boolean[] filterCategory) {
 		this.filterCategory = filterCategory;
 	}
 
+	/**
+	 * Sets the filter date.
+	 *
+	 * @param filterDate the new filter date
+	 */
 	public void setFilterDate(long filterDate) {
 		this.filterDate = filterDate;
 	}
 
+	/**
+	 * Sets the filter lost found.
+	 *
+	 * @param filterLostFound the new filter lost found
+	 */
 	public void setFilterLostFound(int filterLostFound) {
 		this.filterLostFound = filterLostFound;
 	}
 
+	/**
+	 * Sets the filter status.
+	 *
+	 * @param filterStatus the new filter status
+	 */
 	public void setFilterStatus(boolean filterStatus) {
 		this.filterStatus = filterStatus;
 	}

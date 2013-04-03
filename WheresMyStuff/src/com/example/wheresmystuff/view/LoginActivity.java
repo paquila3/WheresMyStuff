@@ -20,6 +20,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
+// TODO: Auto-generated Javadoc
 /**
  * Activity which displays a login screen to the user, offering registration as
  * well.
@@ -29,6 +30,8 @@ public class LoginActivity extends Activity {
 	 * The default email to populate the email field with.
 	 */
 	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
+	
+	/** The Constant MAX_LOGIN_ATTEMPTS. */
 	private static final int MAX_LOGIN_ATTEMPTS = 3;
 
 	/**
@@ -37,18 +40,34 @@ public class LoginActivity extends Activity {
 	private UserLoginTask mAuthTask = null;
 
 	// Values for email and password at the time of the login attempt.
+	/** The m email. */
 	private String mEmail;
+	
+	/** The m password. */
 	private String mPassword;
 
 	// UI references.
+	/** The m email view. */
 	private EditText mEmailView;
+	
+	/** The m password view. */
 	private EditText mPasswordView;
+	
+	/** The m login form view. */
 	private View mLoginFormView;
+	
+	/** The m login status view. */
 	private View mLoginStatusView;
+	
+	/** The m login status message view. */
 	private TextView mLoginStatusMessageView;
 	
+	/** The login attempts. */
 	private int loginAttempts = 0;
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -94,6 +113,9 @@ public class LoginActivity extends Activity {
 				});
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -160,6 +182,8 @@ public class LoginActivity extends Activity {
 
 	/**
 	 * Shows the progress UI and hides the login form.
+	 *
+	 * @param show the show
 	 */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 	private void showProgress(final boolean show) {
@@ -204,6 +228,10 @@ public class LoginActivity extends Activity {
 	 * the user.
 	 */
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+		
+		/* (non-Javadoc)
+		 * @see android.os.AsyncTask#doInBackground(Params[])
+		 */
 		@Override
 		protected Boolean doInBackground(Void... params) {
 
@@ -246,6 +274,9 @@ public class LoginActivity extends Activity {
 			return true;
 		}
 
+		/* (non-Javadoc)
+		 * @see android.os.AsyncTask#onPostExecute(java.lang.Object)
+		 */
 		@Override
 		protected void onPostExecute(final Boolean success) {
 			mAuthTask = null;
@@ -259,6 +290,9 @@ public class LoginActivity extends Activity {
 			}
 		}
 
+		/* (non-Javadoc)
+		 * @see android.os.AsyncTask#onCancelled()
+		 */
 		@Override
 		protected void onCancelled() {
 			mAuthTask = null;

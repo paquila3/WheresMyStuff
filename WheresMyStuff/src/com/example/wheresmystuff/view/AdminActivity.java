@@ -16,11 +16,21 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AdminActivity.
+ */
 public class AdminActivity extends Activity { 
 
+	/** The list items. */
 	ArrayList<String> listItems = new ArrayList<String>();
+    
+    /** The adapter. */
     ArrayAdapter<String> adapter;
 	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -97,6 +107,9 @@ public class AdminActivity extends Activity {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -104,6 +117,11 @@ public class AdminActivity extends Activity {
 		return true;
 	}
 	
+	/**
+	 * Adds the user.
+	 *
+	 * @param s the s
+	 */
 	protected void addUser(String s)
 	{
 		listItems.add(s);

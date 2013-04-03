@@ -13,8 +13,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DonateItemActivity.
+ */
 public class DonateItemActivity extends Activity {
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,6 +87,9 @@ public class DonateItemActivity extends Activity {
 				});
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
