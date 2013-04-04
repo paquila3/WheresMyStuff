@@ -28,6 +28,10 @@
             android:label="@string/title_activity_menu" >
         </activity>
         <activity
+            android:name="com.example.wheresmystuff.view.DonateItemActivity"
+            android:label="@string/title_activity_donate_item" >
+        </activity>
+        <activity
             android:name="com.example.wheresmystuff.view.FoundItemActivity"
             android:label="@string/title_activity_found_item" >
         </activity>

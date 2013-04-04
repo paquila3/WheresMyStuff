@@ -22,27 +22,24 @@ public class WheresMyStuff extends Application {
 	/** The user list. */
 	private static ArrayList<User> userList = new ArrayList<User>();
 	
+
 	private static ArrayList<Item> itemList = new ArrayList<Item>();
 	
 	/** The active user. */
 	private static User activeUser;
 	
-	/** The init. */
-	private static boolean init;
-	
 	private static DatabaseHelper Database;
-	
 	/**
 	 * Initialize.
 	 */
 	public static void initialize() {
-		if (init)
+		System.out.println("12");
+		if (Database.getUserCount()>0){
 			return;
-		User adm = WheresMyStuff.createUser("a@m","aaaa");
-		WheresMyStuff.promoteUser(adm);//Creates default admin
-		userList = (ArrayList<User>) Database.getAllUser();
-		itemList = (ArrayList<Item>) Database.getAllItem();
-		init = true;
+		}
+		System.out.println("17");
+		setActiveUser(createUser("a@m", "aaaa"));
+		activeUser.setAdmin(true);
 	}
 	
 	/**
@@ -53,8 +50,18 @@ public class WheresMyStuff extends Application {
 	 * @return the user
 	 */
 	public static User createUser(String email, String password) {
-		User newUser=new User(email, password, Database.getUserCount());
-		userList.add(newUser);
+		User newUser;
+		try{
+			newUser=new User(email, password, Database.getUserCount());
+			userList.add(newUser);
+		}
+		catch (NullPointerException e){
+			newUser=new User(email,password,0);
+			userList.add(newUser);
+		}
+		System.out.println(newUser.toString());
+		System.out.println(Database.toString());
+		Database.addUser(newUser);
 		return newUser;
 	}
 	
@@ -213,4 +220,16 @@ public class WheresMyStuff extends Application {
 	public static void setItemList(ArrayList<Item> itemList) {
 		WheresMyStuff.itemList = itemList;
 	}
+	
+	public static DatabaseHelper getDatabase() {
+		return Database;
+	}
+
+	public static void setDatabase(DatabaseHelper database) {
+		Database = database;
+	}
+	public static void setUserList(ArrayList<User> userList) {
+		WheresMyStuff.userList = userList;
+	}
+
 }

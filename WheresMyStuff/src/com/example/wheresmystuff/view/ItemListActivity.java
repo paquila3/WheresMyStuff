@@ -153,7 +153,7 @@ public class ItemListActivity extends ListActivity {
 		{
 			for (Item i : u.getItemList())
 			{
-				if (WheresMyStuff.filter(i, filterCategory, filterLostFound, filterDate, filterStatus)) {
+				if (!(i instanceof DonateItem) && WheresMyStuff.filter(i, filterCategory, filterLostFound, filterDate, filterStatus)) {
 					addItem(i.toString());
 				}
 			}

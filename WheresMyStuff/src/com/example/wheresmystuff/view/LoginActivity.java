@@ -1,4 +1,6 @@
 package com.example.wheresmystuff.view;
+import java.util.ArrayList;
+
 import com.example.wheresmystuff.R;
 import com.example.wheresmystuff.model.*;
 import com.example.wheresmystuff.presenter.*;
@@ -73,12 +75,18 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_login);
-		
+		System.out.println("HELLO!!!");
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
+		DatabaseHelper Database = new DatabaseHelper(this);
+		if (Database.getAllUser()!=null)WheresMyStuff.setUserList((ArrayList<User>) Database.getAllUser());
+		if (Database.getAllItem()!=null)WheresMyStuff.setItemList((ArrayList<Item>) Database.getAllItem());
+		WheresMyStuff.setDatabase(Database);
 		WheresMyStuff.initialize();
+		System.out.println(Database.getAllUser().size());
+		System.out.println(WheresMyStuff.getUserList().size());
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),Secure.ANDROID_ID); 
 		if(WheresMyStuff.getActiveUser()!=null && WheresMyStuff.getActiveUser().getUser_android_id().equals(android_id)){
 			Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);

@@ -109,6 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase database) {
+		System.out.println("GFYSILH");
 		database.execSQL(DATABASE_CREATE_1);
 		database.execSQL(DATABASE_CREATE_2);
 	}
@@ -174,6 +175,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			item = new LostItem(cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getString(5),cursor.getLong(6),cursor.getString(7), cursor.getString(8), cursor.getString(9),cursor.getInt(10), cursor.getInt(0));
 			break;
 		}
+
+		db.close();
 		return item;
 	}
 	
@@ -190,8 +193,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		String countQuery = "SELECT * FROM "+ TABLE_NAME_1;
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);
-		cursor.close();
-		return cursor.getCount();
+		int count= cursor.getCount();
+		db.close();
+		return count;
 	}
 	
 	public int updateItem(Item item){
@@ -219,7 +223,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		}
 		values.put(COLUMN_ID_10, item.getUserID());
 		
-		return db.update(TABLE_NAME_1, values, COLUMN_ID_0 + " = ?", new String[] { String.valueOf(item.getID())});
+		int ans=db.update(TABLE_NAME_1, values, COLUMN_ID_0 + " = ?", new String[] { String.valueOf(item.getID())});
+		db.close();
+		return ans;
 	}
 	
 	public void deleteItem(Item item){
@@ -230,7 +236,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public void addUser(User user){
 		SQLiteDatabase db=this.getWritableDatabase();
-		
+		System.out.println("hello");
 		ContentValues values = new ContentValues();
 		values.put(COLUMN_ID_0, user.getUserID());
 		values.put(COLUMN_ID_A, user.getUsername());
@@ -248,8 +254,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public User getUser(int id){
 		SQLiteDatabase db= this.getReadableDatabase();
-		
-		Cursor cursor = db.query(TABLE_NAME_2, new String[] { COLUMN_ID_A, COLUMN_ID_B,COLUMN_ID_C, COLUMN_ID_D,COLUMN_ID_E}, COLUMN_ID_0 + "=?", new String[] { String.valueOf(id)}, null, null, null,null);
+		System.out.println("HERPADERP");
+		Cursor cursor = db.query(TABLE_NAME_2, new String[] {COLUMN_ID_0, COLUMN_ID_A, COLUMN_ID_B,COLUMN_ID_C, COLUMN_ID_D,COLUMN_ID_E}, COLUMN_ID_0 + "=?", new String[] { String.valueOf(id)}, null, null, null,null);
 		if (cursor != null){
 			cursor.moveToFirst();
 		}
@@ -261,24 +267,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		if (cursor.getInt(5)==1){
 			user.setAdmin(true);
 		}
+		db.close();
 		return user;
 	}
 	
 	public List<User> getAllUser(){
 		List<User> users= new ArrayList<User>();
-		
+		System.out.println("HI");
 		for(int i=0; i<this.getUserCount(); i++){
-				users.add(this.getUser(i));
+			System.out.println("adding user number" + i);
+			User newUser= (this.getUser(i));
+			System.out.println(newUser.toString());
+			users.add(newUser);
 		}
-		return null;
+		return users;
 	}
 	
 	public int getUserCount(){
 		String countQuery = "SELECT * FROM "+ TABLE_NAME_2;
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery(countQuery, null);
-		cursor.close();
-		return cursor.getCount();
+		int count = cursor.getCount();
+		db.close();
+		System.out.println(count);
+		return count;
 	}
 	
 	public int updateUser(User user){
@@ -295,8 +307,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		if (user.isAdmin()) admin++;
 		values.put(COLUMN_ID_D, locked);
 		values.put(COLUMN_ID_E, admin);
-		
-		return db.update(TABLE_NAME_2, values, COLUMN_ID_0 + " = ?", new String[] { String.valueOf(user.getUserID())});
+		int ans= db.update(TABLE_NAME_2, values, COLUMN_ID_0 + " = ?", new String[] { String.valueOf(user.getUserID())});
+
+		db.close();
+		return ans;
 	}
 	
 	public void deleteUser(User user){
