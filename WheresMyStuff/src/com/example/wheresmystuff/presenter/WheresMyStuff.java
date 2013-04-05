@@ -141,6 +141,7 @@ public class WheresMyStuff extends Application {
 	 * @return true, if successful
 	 */
 	public static boolean addItem(Item item){
+		Database.addItem(item);
 		return getActiveUser().addItem(item);
 	}
 	

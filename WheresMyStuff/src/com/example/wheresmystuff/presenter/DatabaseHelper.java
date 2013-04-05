@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	  /** The Constant DATABASE_CREATE_2. */
   	private static final String DATABASE_CREATE_2 = "create table "
 		      + TABLE_NAME_2 + "(" + COLUMN_ID_0
-		      + " integer primary key autoincrement, " + COLUMN_ID_A
+		      + " integer primary key, " + COLUMN_ID_A
 		      + " text, " + COLUMN_ID_B + " text, " + COLUMN_ID_C
 		      + " text, " + COLUMN_ID_D + " int, " + COLUMN_ID_E
 		      + " int );";
@@ -132,6 +132,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db=this.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
+		values.put(COLUMN_ID_0, item.getID());
 		values.put(COLUMN_ID_2, item.getName());
 		values.put(COLUMN_ID_3, item.getDescription());
 		values.put(COLUMN_ID_4, item.getCategory());
@@ -159,7 +160,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public Item getItem(int id){
 		SQLiteDatabase db = this.getReadableDatabase();
 		
-		Cursor cursor = db.query(TABLE_NAME_1, new String[] { COLUMN_ID_1, COLUMN_ID_2,COLUMN_ID_3, COLUMN_ID_4,COLUMN_ID_5, COLUMN_ID_6,COLUMN_ID_7, COLUMN_ID_8, COLUMN_ID_9}, COLUMN_ID_0+ "=?",new String[] {String.valueOf(id)}, null, null, null, null);
+		Cursor cursor = db.query(TABLE_NAME_1, new String[] {COLUMN_ID_0, COLUMN_ID_1, COLUMN_ID_2,COLUMN_ID_3, COLUMN_ID_4,COLUMN_ID_5, COLUMN_ID_6,COLUMN_ID_7, COLUMN_ID_8, COLUMN_ID_9}, COLUMN_ID_0+ "=?",new String[] {String.valueOf(id)}, null, null, null, null);
 		if (cursor!=null){
 			cursor.moveToFirst();
 		}
