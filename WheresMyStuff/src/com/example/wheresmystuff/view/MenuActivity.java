@@ -85,7 +85,9 @@ public class MenuActivity extends Activity {
 					
 					@Override
 					public void onClick(View view) {
-						Intent itemListIntent = new Intent(MenuActivity.this, ItemListActivity.class);
+						/*Intent itemListIntent = new Intent(MenuActivity.this, ItemListActivity.class);
+						startActivity(itemListIntent);*/
+						Intent itemListIntent = new Intent(MenuActivity.this, SearchMenuActivity.class);
 						startActivity(itemListIntent);
 						finish();
 					}
