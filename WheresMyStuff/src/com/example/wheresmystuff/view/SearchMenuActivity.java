@@ -33,6 +33,7 @@ public class SearchMenuActivity extends Activity {
 		ListView list = (ListView)findViewById(R.id.search_list);
 		list.setAdapter(adapter);
 		
+		
 		filterName = "";
 		filterDescription = "";
 		
