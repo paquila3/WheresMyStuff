@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	  /** The Constant DATABASE_CREATE_1. */
   	private static final String DATABASE_CREATE_1 = "create table "
 		      + TABLE_NAME_1 + "(" + COLUMN_ID_0
-		      + " integer primary key autoincrement, "+ COLUMN_ID_1+ " int, "
+		      + " integer primary key, "+ COLUMN_ID_1+ " int, "
 		      + COLUMN_ID_2 + " text, " + COLUMN_ID_3 + " text, " + COLUMN_ID_4
 		      + " int, " + COLUMN_ID_5 + " text, " + COLUMN_ID_6
 		      + " int, " + COLUMN_ID_7 + " text, " + COLUMN_ID_8
@@ -109,7 +109,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		System.out.println("GFYSILH");
 		database.execSQL(DATABASE_CREATE_1);
 		database.execSQL(DATABASE_CREATE_2);
 	}
@@ -160,11 +159,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public Item getItem(int id){
 		SQLiteDatabase db = this.getReadableDatabase();
 		
-		Cursor cursor = db.query(TABLE_NAME_1, new String[] {COLUMN_ID_0, COLUMN_ID_1, COLUMN_ID_2,COLUMN_ID_3, COLUMN_ID_4,COLUMN_ID_5, COLUMN_ID_6,COLUMN_ID_7, COLUMN_ID_8, COLUMN_ID_9}, COLUMN_ID_0+ "=?",new String[] {String.valueOf(id)}, null, null, null, null);
+		Cursor cursor = db.query(TABLE_NAME_1, new String[] {COLUMN_ID_0, COLUMN_ID_1, COLUMN_ID_2,COLUMN_ID_3, COLUMN_ID_4,COLUMN_ID_5, COLUMN_ID_6,COLUMN_ID_7, COLUMN_ID_8, COLUMN_ID_9, COLUMN_ID_10}, COLUMN_ID_0+ "=?",new String[] {String.valueOf(id)}, null, null, null, null);
 		if (cursor!=null){
 			cursor.moveToFirst();
 		}
 		Item item=null;
+		System.out.println(cursor.toString());
+		System.out.println(cursor.getInt(1));
 		switch(cursor.getInt(1)){
 		case(ITEM_TYPE_FOUND):
 			item = new FoundItem(cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getString(5),cursor.getLong(6),cursor.getInt(9), cursor.getInt(0));
@@ -196,6 +197,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery(countQuery, null);
 		int count= cursor.getCount();
 		db.close();
+		System.out.println(count);
 		return count;
 	}
 	
@@ -237,7 +239,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public void addUser(User user){
 		SQLiteDatabase db=this.getWritableDatabase();
-		System.out.println("hello");
 		ContentValues values = new ContentValues();
 		values.put(COLUMN_ID_0, user.getUserID());
 		values.put(COLUMN_ID_A, user.getUsername());
@@ -255,7 +256,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public User getUser(int id){
 		SQLiteDatabase db= this.getReadableDatabase();
-		System.out.println("HERPADERP");
 		Cursor cursor = db.query(TABLE_NAME_2, new String[] {COLUMN_ID_0, COLUMN_ID_A, COLUMN_ID_B,COLUMN_ID_C, COLUMN_ID_D,COLUMN_ID_E}, COLUMN_ID_0 + "=?", new String[] { String.valueOf(id)}, null, null, null,null);
 		if (cursor != null){
 			cursor.moveToFirst();
@@ -274,11 +274,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public List<User> getAllUser(){
 		List<User> users= new ArrayList<User>();
-		System.out.println("HI");
 		for(int i=0; i<this.getUserCount(); i++){
-			System.out.println("adding user number" + i);
 			User newUser= (this.getUser(i));
-			System.out.println(newUser.toString());
 			users.add(newUser);
 		}
 		return users;
@@ -290,7 +287,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery(countQuery, null);
 		int count = cursor.getCount();
 		db.close();
-		System.out.println(count);
 		return count;
 	}
 	
