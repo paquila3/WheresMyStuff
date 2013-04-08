@@ -74,20 +74,17 @@ public class SearchMenuActivity extends Activity {
 	
 	protected void populateList() {
 		String add;
-		for (User u : WheresMyStuff.getUserList())
+		for (Item i : WheresMyStuff.getItemList())
 		{
-			for (Item i : u.getItemList())
-			{
-				if (WheresMyStuff.search(i, filterName, filterDescription)) {
-					add = i.toString();
-					if (i instanceof LostItem) {
-						add += " (Lost)";
-					}
-					if (i instanceof FoundItem) {
-						add += " (Found)";
-					}
-					addItem(add);
+			if (WheresMyStuff.search(i, filterName, filterDescription)) {
+				add = i.toString();
+				if (i instanceof LostItem) {
+					add += " (Lost)";
 				}
+				if (i instanceof FoundItem) {
+					add += " (Found)";
+				}
+				addItem(add);
 			}
 		}
 	}

@@ -166,6 +166,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		Item item=null;
 		System.out.println(cursor.toString());
 		System.out.println(cursor.getInt(1));
+		System.out.println(cursor.getString(2));
 		switch(cursor.getInt(1)){
 		case(ITEM_TYPE_FOUND):
 			item = new FoundItem(cursor.getString(2),cursor.getString(3),cursor.getInt(4),cursor.getString(5),cursor.getLong(6),cursor.getInt(9), cursor.getInt(0));

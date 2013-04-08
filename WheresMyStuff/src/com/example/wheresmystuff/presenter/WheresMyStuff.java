@@ -61,8 +61,6 @@ public class WheresMyStuff extends Application {
 			newUser=new User(email,password,0);
 			userList.add(newUser);
 		}
-		System.out.println(newUser.toString());
-		System.out.println(Database.toString());
 		Database.addUser(newUser);
 		return newUser;
 	}
@@ -89,6 +87,7 @@ public class WheresMyStuff extends Application {
 		for(int i=0; i<userList.size(); i++){
 			if((userList.get(i).getUsername().equals(user.getUsername()))&& (userList.get(i).getPassword().equals(user.getPassword()))){
 				userList.get(i).setAdmin(true);
+				Database.updateUser(user);
 			}
 		}
 		return user;

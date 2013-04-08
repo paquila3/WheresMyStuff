@@ -149,13 +149,10 @@ public class ItemListActivity extends ListActivity {
 	 * Populate list.
 	 */
 	protected void populateList() {
-		for (User u : WheresMyStuff.getUserList())
+		for (Item i: WheresMyStuff.getItemList())
 		{
-			for (Item i : u.getItemList())
-			{
-				if (!(i instanceof DonateItem) && WheresMyStuff.filter(i, filterCategory, filterLostFound, filterDate, filterStatus)) {
-					addItem(i.toString());
-				}
+			if (!(i instanceof DonateItem) && WheresMyStuff.filter(i, filterCategory, filterLostFound, filterDate, filterStatus)) {
+				addItem(i.toString());
 			}
 		}
 	}
