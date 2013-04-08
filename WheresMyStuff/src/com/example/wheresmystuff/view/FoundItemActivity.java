@@ -75,10 +75,8 @@ public class FoundItemActivity extends Activity {
 						long date= d.getTime();
 						Item found= new FoundItem(name, description, category, location, date, WheresMyStuff.getActiveUser().getUserID(), WheresMyStuff.getItemList().size());
 						if(WheresMyStuff.addItem(found)){
-
-							Intent foundIntent = new Intent(FoundItemActivity.this, ItemListActivity.class);
-
-							foundIntent.putExtra("filter", "found");
+							SearchMenuActivity.setMatchDetails(name, description);
+							Intent foundIntent = new Intent(FoundItemActivity.this, SearchMenuActivity.class);
 							startActivity(foundIntent);
 							finish();
 						}

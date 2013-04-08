@@ -81,8 +81,8 @@ public class AddItemActivity extends Activity {
 						long date= d.getTime();
 						LostItem lost= new LostItem(name, description, category, location, date, contact , phoneNumber, email, WheresMyStuff.getActiveUser().getUserID(), WheresMyStuff.getItemList().size());
 						if(WheresMyStuff.addItem(lost)){
-							Intent lostIntent = new Intent(AddItemActivity.this, ItemListActivity.class);
-							lostIntent.putExtra("filter", "lost");
+							SearchMenuActivity.setMatchDetails(name, description);
+							Intent lostIntent = new Intent(AddItemActivity.this, SearchMenuActivity.class);
 							startActivity(lostIntent);
 							finish();
 						}

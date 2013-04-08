@@ -141,6 +141,7 @@ public class WheresMyStuff extends Application {
 	 */
 	public static boolean addItem(Item item){
 		Database.addItem(item);
+		itemList.add(item);
 		return getActiveUser().addItem(item);
 	}
 	

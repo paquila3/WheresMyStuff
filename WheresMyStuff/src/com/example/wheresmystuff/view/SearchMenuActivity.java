@@ -25,7 +25,7 @@ public class SearchMenuActivity extends Activity {
 	 */
 	ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-	private static String filterName, filterDescription;
+	private static String filterName, filterDescription, matchName, matchDescription;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,18 @@ public class SearchMenuActivity extends Activity {
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
 		ListView list = (ListView)findViewById(R.id.search_list);
 		list.setAdapter(adapter);
-		
-		
-		filterName = "";
-		filterDescription = "";
+		if (matchName != null && matchName != "") {
+			filterName = matchName;
+			matchName = "";
+		} else {
+			filterName = "";
+		}
+		if (matchDescription != null && matchDescription != "") {
+			filterDescription = matchDescription;
+			matchDescription = "";
+		} else {
+			filterDescription = "";
+		}
 		
 		populateList();
 		
@@ -96,6 +104,11 @@ public class SearchMenuActivity extends Activity {
 	{
 		listItems.add(s);
         adapter.notifyDataSetChanged();
+	}
+	
+	public static void setMatchDetails(String name, String description) {
+		matchName = name;
+		matchDescription = description;
 	}
 	
 	@Override
