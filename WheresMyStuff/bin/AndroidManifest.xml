@@ -64,7 +64,7 @@
             android:label="@string/title_activity_search_menu" >
         </activity>
         <activity
-            android:name="com.example.wheresmystuff.view.UserProfile"
+            android:name="com.example.wheresmystuff.view.UserProfileActivity"
             android:label="@string/title_activity_user_profile" >
         </activity>
     </application>

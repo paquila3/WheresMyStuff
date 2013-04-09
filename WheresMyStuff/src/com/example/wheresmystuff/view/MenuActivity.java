@@ -100,8 +100,9 @@ public class MenuActivity extends Activity {
 					@Override
 					public void onClick(View view) {
 						// TODO Auto-generated method stub
-						((Button) findViewById(R.id.main_user_profile)).setError(getString(R.string.DNE));
-						
+						Intent userIntent = new Intent(MenuActivity.this, UserProfileActivity.class);
+						startActivity(userIntent);
+						finish();
 					}
 					
 				});
