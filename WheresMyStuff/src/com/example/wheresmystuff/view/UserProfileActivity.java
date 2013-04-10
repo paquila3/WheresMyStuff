@@ -7,11 +7,12 @@ import com.example.wheresmystuff.model.*;
 import com.example.wheresmystuff.presenter.*;
 
 import android.os.Bundle;
-import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 // TODO: Auto-generated Javadoc
@@ -19,7 +20,7 @@ import android.widget.TextView;
  * The Class UserProfileActivity.
  */
 
-public class UserProfileActivity extends ListActivity {
+public class UserProfileActivity extends Activity {
 
 	ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -31,9 +32,22 @@ public class UserProfileActivity extends ListActivity {
 		String name=WheresMyStuff.getActiveUser().getUsername();
 		textView.setText(name);
 		
+		final TextView textView2 = (TextView) findViewById(R.id.is_admin);
+		String name2;
+		if(WheresMyStuff.getActiveUser().isAdmin()){
+			name2="Admin Account";
+		}
+		else{
+			name2="Regular Account";
+		}
+		textView2.setText(name2);
+		
+		final TextView textView3 = (TextView) findViewById(R.id.items_text);
+		textView3.setText("Items:");
+		
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
-		setListAdapter(adapter);
-		populateList();
+		ListView list = (ListView)findViewById(R.id.user_list);
+		list.setAdapter(adapter);
 		
 		findViewById(R.id.back).setOnClickListener(
 				new View.OnClickListener() {
@@ -51,8 +65,10 @@ public class UserProfileActivity extends ListActivity {
 	}
 	protected void populateList() {
 		User u = WheresMyStuff.getActiveUser();
+		String add;
 			for (Item i : u.getItemList()){
-				addItem(i.toString());
+				add=i.toString();
+				addItem(add);
 			}
 	}
 	

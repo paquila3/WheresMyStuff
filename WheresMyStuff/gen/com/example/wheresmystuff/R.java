@@ -29,7 +29,7 @@ public final class R {
         public static final int Donate_button=0x7f080051;
         public static final int Found_button=0x7f080053;
         public static final int Unlock_User=0x7f08001b;
-        public static final int action_settings=0x7f080064;
+        public static final int action_settings=0x7f080065;
         public static final int admin_button=0x7f08004e;
         public static final int back=0x7f080012;
         public static final int buttonFlter=0x7f08003a;
@@ -66,8 +66,8 @@ public final class R {
         public static final int found_title_text=0x7f08002b;
         public static final int found_type=0x7f080034;
         public static final int healthcare_radio=0x7f08001d;
-        public static final int is_admin=0x7f080061;
-        public static final int items_text=0x7f08005f;
+        public static final int is_admin=0x7f080062;
+        public static final int items_text=0x7f080060;
         public static final int linearLayout1=0x7f080002;
         public static final int list_category=0x7f080043;
         public static final int list_date=0x7f080046;
@@ -107,8 +107,8 @@ public final class R {
         public static final int main_add_item_text=0x7f080050;
         public static final int main_to_item_list=0x7f080055;
         public static final int main_user_profile=0x7f080056;
-        public static final int menu_forgot_password=0x7f080063;
-        public static final int menu_settings=0x7f080062;
+        public static final int menu_forgot_password=0x7f080064;
+        public static final int menu_settings=0x7f080063;
         public static final int other_text=0x7f080054;
         public static final int password=0x7f08004b;
         public static final int search=0x7f08005a;
@@ -122,9 +122,10 @@ public final class R {
         public static final int submit=0x7f080013;
         public static final int toys_radio=0x7f080020;
         public static final int type_text_lost=0x7f080011;
-        public static final int user_back=0x7f08005e;
+        public static final int user_back=0x7f08005f;
         public static final int user_email=0x7f080019;
-        public static final int user_username=0x7f080060;
+        public static final int user_list=0x7f08005e;
+        public static final int user_username=0x7f080061;
     }
     public static final class layout {
         public static final int activity_add_item=0x7f030000;
