@@ -1,4 +1,4 @@
-package JUnits;
+package com.example.wheresmystuff.junits;
 
 import org.junit.Test;
 
