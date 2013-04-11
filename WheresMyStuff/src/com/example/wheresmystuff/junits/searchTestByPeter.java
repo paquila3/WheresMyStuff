@@ -12,8 +12,8 @@ public class searchTestByPeter extends AndroidTestCase {
 	public void setUp() {
 		lostItem1 = new LostItem("LostItem1", "Lost Item", 0, "", 0, "", "", "", 0, 0);
 		lostItem2 = new LostItem("LostItem2", "Lost Item", 0, "", 0, "", "", "", 0, 0);
-		foundItem1 = new LostItem("FoundItem1", "Found Item", 0, "", 0, "", "", "", 0, 0);
-		foundItem2 = new LostItem("FoundItem2", "Found Item", 0, "", 0, "", "", "", 0, 0);
+		foundItem1 = new FoundItem("FoundItem1", "Found Item", 0, "", 0, 0, 0);
+		foundItem2 = new FoundItem("FoundItem2", "Found Item", 0, "", 0, 0, 0);
 	}
 	
 	public void testCase1() throws Throwable {
